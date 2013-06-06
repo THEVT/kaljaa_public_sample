@@ -1,0 +1,13 @@
+<% if @invited.exists?(:profile_id => current_profile.id) %>
+	<%= form_for(@attendee) do |f| %>
+		<%= f.hidden_field :group_id, :value => @group.id %>
+		<%= f.label :status, "Join", :value => "joined"  %>
+		<%= f.radio_button :status, "joined" %>
+		<%= f.label :status, "Decline", :value => "declined" %>
+		<%= f.radio_button :status, 'declined' %>
+		<%= f.label :ignore, "Ignore", :value => "1"  %>
+		<%= f.radio_button :status, 1 %>
+		
+		<%= f.submit "Respond"%>
+	<% end %>
+<% end %>

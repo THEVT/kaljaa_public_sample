@@ -1,0 +1,22 @@
+<%= image_tag @reviewbeer.photo.url(:thumb) %>	
+	<span class="content"><%= @reviewbeer.brewery_name %></span>	
+	<span class="content"><%= @reviewbeer.beer_name %></span>
+	<span class="timestamp">
+		Posted <%= time_ago_in_words(@reviewbeer.created_at) %> ago.
+	</span>
+	<span class="content"><%= "Personal Brew" if @reviewbeer.personal_brew == 1 %></span>
+	<span class="content"><%= @reviewbeer.grade %></span>
+	<span class="content"><%= @reviewbeer.beer_type %></span>
+	<span class="content"><%= @reviewbeer.content %></span>
+	<span class="content"><%= @reviewbeer.look %></span>
+	<span class="content"><%= @reviewbeer.smell %></span>
+	<span class="content"><%= @reviewbeer.taste %></span>
+	<span class="content"><%= @reviewbeer.feel %></span>
+	<% if current_profile?(@reviewbeer.profile) %>
+		<%= link_to 'Edit Beer',  edit_reviewbeer_path(@reviewbeer.id) %>
+		<%= link_to "delete", @reviewbeer, method: :delete,
+				                 data: { confirm: "You sure?" },
+				                 title: @reviewbeer.content %>
+	<% end %>
+
+<%= render 'comments/comment' %>

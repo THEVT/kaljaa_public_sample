@@ -1,0 +1,157 @@
+
+#return-link {
+	margin-top: 10px;
+	font-weight: 18px;
+}
+#photos,#albums {
+	background-color: #fff6e0;
+	border: 1px solid #864;
+	margin: 10px 22px;
+	width: 678px;
+	padding: 18px;
+	position: relative;
+}
+#albums {
+	margin-bottom: 25px;
+}
+#photos {
+	margin-bottom: 45px;
+}
+.options {
+	position: absolute;
+	right: 5px;
+	bottom: -30px;
+	width: 600px;
+	text-align: right;
+}
+.options .kj-button {
+	margin-left: 6px;
+}
+
+/**
+ * Album container
+ */
+#albums {
+	min-height: 100px;
+	position: relative;
+}
+#overflow-wrapper {
+	overflow: hidden;
+}
+#overflow-bin {
+	position: relative;
+}
+.album {
+	display: inline-block;
+	margin: 8px 18px;
+	text-align: center;
+	vertical-align: top;
+}
+.image {
+	padding: 4px 4px 1px;
+	border: 1px solid #999;
+	cursor: pointer;
+	background: #fff;
+}
+.image:hover {
+	border: 2px solid #661a09;
+	padding: 3px 3px 0px;
+}
+.album .image.small.active {
+	padding: 3px 2px 0px 3px;
+	border: 2px solid #c93;
+}
+.album .image.small {
+	padding-right: 3px;
+}
+.album .image.small:hover {
+	padding: 3px 2px 0px 3px;
+}
+.album img {
+	width: 180px;
+	height: 150px;
+}
+.album .title {
+	margin-top: 4px;
+	max-width: 190px;
+}
+/**
+ * Album controls
+ */
+#albums .arrow {
+	font-size: 36px;
+	color: #661a09;
+	font-weight: bold;
+	text-shadow: 0 0 5px #661a09;
+	cursor: pointer;
+	position: absolute;
+	top: 42px;
+}
+.arrow.left {
+	left: 18px;
+}
+.arrow.right {
+	right: 18px;
+}
+#albums .arrow:hover {
+	text-shadow: 0 0 5px #c31;
+	color: #c31;
+}
+#albums .arrow.disabled {
+	color: #666;
+	text-shadow: 0 0 5px #666;
+	cursor: default;
+}
+/**
+ * Album creation dialog
+ */
+.dialog {
+	vertical-align: top;
+}
+.dialog .kj-button {
+	padding: 6px 12px 5px;
+	margin-right: 5px;
+}
+.dialog .form-row {
+	margin: 5px 0;
+}
+.dialog .label {
+	display: inline-block;
+	min-width: 100px;
+}
+.dialog form {
+	margin: 10px 0;
+}
+#pic-list {
+	display: inline-block;
+}
+.dialog .kj-button.close {
+	padding: 1px 3px;
+	margin-right: 5px;
+	margin-bottom: 3px;
+}
+
+#photos .image {
+	display: inline-block;
+	margin: 8px 18px;
+}
+
+#delete-album span {
+	font-size: 11px;
+	color: #333;
+}
+
+.show-photo .kj-button {
+	float: right;
+	margin: 5px 0 0 0;
+}
+
+#photos .photo-opt {
+	position: absolute;
+	bottom: -30px;
+	left: 5px;
+}
+
+.button-list .self {
+	margin-right: 5px;
+}

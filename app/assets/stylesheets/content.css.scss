@@ -1,0 +1,63 @@
+/*********Banner Styles***********/
+#picture img {
+	width: 112px;
+	max-height: 140px;
+	border: 1px solid #ccc;
+}
+#content-banner {
+	height: 170px;
+}
+#picture {
+	float: left;
+	margin: 0 34px 0 54px;
+}
+#details {
+	float: left;
+	margin-left: 15px;
+	padding-top: 10px;
+	width: 560px;
+	position: relative;
+}
+#kj-search-bar {
+	float: right;
+}
+
+#details .title {
+	font-size: 24px;
+	font-weight: bold;
+}
+#body .title .text {
+	width: 450px;
+	display: inline-block;
+}
+.author {
+	font-size: 16px;
+	font-weight: bold;
+}
+.ts {
+	color: #666;
+	margin: 10px 0;
+}
+#body .ratebar {
+	margin: 0 10px;
+	display: inline-block;
+	float: right;
+}
+
+#data {
+	border: 1px solid #661a09;
+	padding: 5px;
+}
+
+#body .title {
+	font-size: 16px;
+	border-bottom: 2px solid #661a09;
+	padding-bottom: 2px;
+	font-weight: bold;
+}
+
+#edit-link {
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+}

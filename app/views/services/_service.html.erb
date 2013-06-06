@@ -1,0 +1,28 @@
+<% if current_user.admin? || current_user?(@account) %>
+<p> Hello there </p>
+	<%if !Service.exists?(profile_id: @profile.id) %>
+		<%= form_for(@service) do |f| %>
+		  <%= render 'shared/error_messages', object: f.object %>
+		  <div class="field">
+		    <%= f.text_area :content, placeholder: "Add some services..." %>
+		  </div>
+		  <%= f.submit "Post"%>
+		<% end %>
+	<% else %>
+		<p>
+			<b>Services:</b>
+			<%= best_in_place @profile.service, :content, type: :textarea %>
+		</p>
+
+	<%= link_to 'Edit Services',  edit_service_path(@service_present) %>
+	<% end %>
+
+<% else %>
+
+	<p>
+		<b>Services:</b>
+		<%= @profile.service.content %>
+	</p>
+
+
+<% end %>

@@ -1,0 +1,31 @@
+
+<%= form_for(@article) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	<div class="field">
+
+		<%= f.label :title, 'News Article Title:' %>	
+		<%= f.text_field :title, placeholder: "News title..." %>
+
+		<%= f.label :content, 'Content:' %>		
+		<%= f.text_area :content, :class => "tinymce", :rows => 40, :cols => 120 %>
+
+		<% if @profile.account.ty == "social" %>	
+
+			<%= f.hidden_field :word_on_the_street, value: "1"  %>
+
+		<% else %>
+
+			<%= f.hidden_field :word_on_the_street, value: "0"  %>
+
+		<% end %>
+
+		<%= f.hidden_field :event_id, :value => params[:event_id]  %>
+
+		<%= f.hidden_field :group_id, :value => params[:group_id]  %>
+			
+	</div>
+	<%= f.submit "Post"%>
+	<%= link_to "Cancel", @profile %>
+<% end %>
+
+<%= tinymce %>

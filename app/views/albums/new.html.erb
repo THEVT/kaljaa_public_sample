@@ -1,0 +1,21 @@
+<h2>Create a Album then add some photos</h2>
+<%= form_for(@album) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	<div class="field">
+	
+		<%= f.label :title, 'Title:' %>	
+		<%= f.text_field :title, placeholder: "Photo title..." %>
+
+		<%= f.label :description, 'Brief Description:' %>		
+		<%= f.text_area :description, :rows => 20, :cols => 100 %>
+
+		<%= f.hidden_field :profile_id, :value => params[:profile_id]  %>
+
+		<%= f.hidden_field :event_id, :value => params[:event_id]  %>
+
+		<%= f.hidden_field :group_id, :value => params[:group_id]  %>
+
+	</div>
+	<%= f.submit "Create Album"%>
+	<%= link_to "Cancel", @profile %>
+<% end %>

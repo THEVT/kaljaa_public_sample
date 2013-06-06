@@ -1,0 +1,38 @@
+<div id="info"><div class="content"><div class="clearfix" style="width: 100%;">
+	<div>
+		<div id="reg-info">
+			<a href="/"><%= image_tag("logo-big.gif", {:id => "logo-med"}) %></a>
+			<div id="medium-slogan"><%=@slogan%></div>
+		</div>
+		<div id="login">
+			<form id="reg-form" action="/register?type=vendor" enctype="multipart/form-data" method="post">
+				<table>
+					<tr><th class="label">Registration Information</th><td></td></tr>
+					<tr><td class="label">Organization Name</td><td><input name="name" size="<%=Constants::LOGIN_SIZE%>"/></td></tr>
+					<tr><td class="label">City</td><td><input name="city" size="<%=Constants::LOGIN_SIZE%>"/></td></tr>
+					<tr><td class="label">State</td><td><select name="state"><%Constants::STATES.each do |state|%><option value="<%=state%>"><%=state%><%end%></select></td></tr>
+					<tr><td class="label">Zip Code</td><td><input name="zip" size="<%=Constants::LOGIN_SIZE%>"/></td></tr>
+					<tr><td class="label">Email</td><td><input name="email" size="<%=Constants::LOGIN_SIZE%>"/></td></tr>
+					<tr><td class="label">Password</td><td><input type="password" name="password" size="<%=Constants::LOGIN_SIZE%>"/></td></tr>
+					<tr><td class="label">Confirm Password</td><td><input type="password" name="password_conf" size="<%=Constants::LOGIN_SIZE%>"/></td></tr>
+					<tr><td></td><td>
+						<input type="checkbox" name="terms" value="1" /> I Agree to the <a class="underline link" onclick="Client.showWindow('/terms')">Terms of Service</a></label>
+					</td></tr>
+					<tr><td></td><td><input type="submit" class="kj-button red" value="Register" /></td></tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	<div id="profile-text" class="clearfix">
+		Vendor Profile:
+		<p>Welcome to Kaljaa! Kaljaa is a social network design to specifically to cater almost every aspect of the beer and brewery industry.   This site is made to benefit every Restaurant/Store in business to business and business to customer relationships with networking, news, blogs, beer releases and reviews, while promoting you and providing marketing data.</p>
+		<p>So what do you get when you subscribe to Kaljaa as a Restaurant/Store?  When you subscribe, you receive your own personal profile specifically labeled and designed for a Restaurant/Store.  With the Restaurant/Store profile you have access to the whole network of Kaljaa and certain tools embedded in your profile that will help you communicate with all the aspects of the beer industry and culture.  You will be able to communicate and get up to date information with other Restaurant/Store, brewerys, media/critics, customers/beer lovers, and supplier/distributors.  This site brings everything a brewery needs in one easy to use and simplified site.</p>
+	</div>
+</div></div></div>
+<div id="secondary" class="content">
+	<div class="header">Return/Refund Policy:</div>
+	
+<p>First and foremost, Kaljaa is here for you, the customer, and your satisfaction is our priority. However once you subscribe for a month you are locked in for that month. We will refund you on a situational basis, but we will refund your subscription. Since Kaljaa is a new site, we want to understand your problems so we can fix them. With year subscriptions, the same policy applies.</p>
+<div class="header">Delivery Method</div>
+<p>Once you pay for the subscriptions, you have immediate access to your profile on Kaljaa.</p>
+</div>

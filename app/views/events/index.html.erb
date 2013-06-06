@@ -1,0 +1,24 @@
+<%= link_to "Start New Event", new_event_path %>
+
+<h1>Events</h1>
+
+<%= will_paginate %>
+
+<ul class="list_3_12">
+<% @events.each do |event| %>
+	<li>
+	<%= image_tag event.photo.url(:thumb) %>
+	<%= link_to event.title, event %> <br>
+	<%= event.profile.s1 %>
+	Posted <%= time_ago_in_words(event.created_at) %> ago.
+
+	</li>
+<% end %>
+</ul>
+<%= will_paginate %>
+
+<%= calendar @events do |event| %>
+  <div><%= link_to event.title, event %></div>
+<% end %>
+
+

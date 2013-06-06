@@ -1,0 +1,14 @@
+<%= form_for(@invite) do |f| %>
+
+		<%= f.label :status, "Attending"  %>
+		<%= f.radio_button :status, "attending" %>
+		<%= f.label :status, "Not Attending"%>
+		<%= f.radio_button :status, 'not attending' %>
+		<%= f.label :status, "Maybe" %>
+		<%= f.radio_button :status, "maybe" %>
+		
+		<%= f.submit "Respond"%>
+<% end %>
+
+<%= link_to "delete", @invite, method: :delete,
+				                 data: { confirm: "You sure?" } %>

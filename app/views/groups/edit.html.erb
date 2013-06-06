@@ -1,0 +1,44 @@
+<%= link_to "Return to Group", @group %>
+<%= link_to "Return to Groups Home", groups_path %>
+
+<%= form_for(@group) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	<div class="field">
+
+		<%= f.label :photo, 'Add a photo for group:' %>		
+		<%= f.file_field :photo %>
+
+		<%= f.label :title, 'Event Title:' %>	
+		<%= f.text_field :title, placeholder: "Event title..." %>
+
+
+		<%= f.label :exclusive, "Public", :value => "0"  %>
+		<%= f.radio_button :exclusive, 0, :checked => true %>
+		<%= f.label :exclusive, "Private", :value => "1" %>
+		<%= f.radio_button :exclusive, 1 %>
+
+		<%= f.label :visible, "Yes", :value => "0"  %>
+		<%= f.radio_button :visible, 0, :checked => true %>
+		<%= f.label :visible, "No", :value => "1" %>
+		<%= f.radio_button :visible, 1 %>
+
+		<%= f.label :street, 'Street:' %>	
+		<%= f.text_field :street %>
+
+		<%= f.label :city, 'City:' %>	
+		<%= f.text_field :city%>
+
+		<%= f.label :state, 'State:' %>	
+		<%= f.select :state, states%>
+
+		<%= f.label :zipcode, 'Zipcode:' %>	
+		<%= f.text_field :zipcode%>
+
+		<%= f.label :description, 'Description:' %>		
+		<%= f.text_area :description, placeholder: "Description of group..." %>
+
+	</div>
+	<%= f.submit "Post"%>
+	<%= link_to "Cancel", @profile %>
+<% end %>
+

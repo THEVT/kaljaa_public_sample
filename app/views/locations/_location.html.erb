@@ -1,0 +1,28 @@
+<% if current_user.admin? || current_user?(@account) %>
+<p> Hello there </p>
+	<%if !Location.exists?(profile_id: @profile.id) %>
+		<%= form_for(@location) do |f| %>
+		  <%= render 'shared/error_messages', object: f.object %>
+		  <div class="field">
+		    <%= f.text_area :content, placeholder: "Add some locations..." %>
+		  </div>
+		  <%= f.submit "Post"%>
+		<% end %>
+	<% else %>
+		<p>
+			<b>Distribution/Locations:</b>
+			<%= best_in_place @profile.location, :content, type: :textarea %>
+		</p>
+
+	<%= link_to 'Edit Distribution/locations',  edit_location_path(@location_present) %>
+	<% end %>
+
+<% else %>
+
+	<p>
+		<b>Distribution/Locations:</b>
+		<%= @profile.location.content %>
+	</p>
+
+
+<% end %>

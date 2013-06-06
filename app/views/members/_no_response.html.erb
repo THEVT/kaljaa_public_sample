@@ -1,0 +1,16 @@
+<ul>
+	<% @not_responded.each do |not_responded| %>
+		<li>
+			<%= link_to (not_responded.profile.s1+" "+not_responded.profile.s2), not_responded.profile %> <br>
+			<% if (current_profile.id == @group.profile_id) || group_admin %>
+				<% if not_responded.admin == 0 %>
+						<%= link_to "Make Admin", admin_member_path(not_responded)%>
+				<% else %>
+						<p>Admin  						
+						<%= link_to "Undo Admin Status", admin_member_path(not_responded)%></p>
+				<% end %>
+				<%= link_to "Delete", not_responded, method: :delete, data: { confirm: "Delete this Lame-o from the group??" } %>
+			<% end %>
+		</li>
+	<% end %>
+</ul>

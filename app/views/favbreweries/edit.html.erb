@@ -1,0 +1,35 @@
+<%= form_for(@favbrewery) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+
+	<%= f.label :b1 %>
+	<%= f.text_field :b1 %>
+
+	<%= f.label :b2 %>
+	<%= f.text_field :b2 %>
+
+	<%= f.label :b3 %>
+	<%= f.text_field :b3 %>
+
+	<%= f.label :b4 %>
+	<%= f.text_field :b4 %>
+
+	<%= f.label :b5 %>
+	<%= f.text_field :b5 %>
+
+	<%= f.label :b6 %>
+	<%= f.text_field :b6 %>
+
+	<%= f.label :b7 %>
+	<%= f.text_field :b7 %>
+
+	<%= f.label :b8 %>
+	<%= f.text_field :b8 %>
+
+	<%= f.label :b9 %>
+	<%= f.text_field :b9 %>
+
+	<%= f.label :b10 %>
+	<%= f.text_field :b10 %>
+	
+	<%= f.submit "Save changes"%>
+<% end %>

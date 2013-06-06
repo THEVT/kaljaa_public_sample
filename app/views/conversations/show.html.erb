@@ -1,0 +1,13 @@
+
+<%= @conversation.subject %>
+
+<%= content_tag_for(:li, @conversation.receipts_for(current_profile)) do |receipt| %>
+	
+	<%  message = receipt.message %>
+	<%= message.subject %>
+	<%= message.body %>
+	
+<% end %>
+
+
+

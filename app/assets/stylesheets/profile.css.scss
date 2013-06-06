@@ -1,0 +1,335 @@
+textarea {
+	width: 554px;
+	background: #e0e0e0;
+	border: 1px solid #ccc;
+	border-top: 2px solid #b8b8b8;
+	resize: none; 
+}
+
+.i {
+	padding-top: 15px;
+}
+
+#account-rating {
+	height: 50px;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 15px 0;
+}
+#account-rating .ratebar {
+	margin-top: 3px;
+}
+#user-pic {
+	position: relative;
+}
+#user-pic .overlay {
+	border: 2px solid rgb(102, 26, 9);
+	width: 196px;
+	height: 246px;
+	cursor: pointer;
+}
+#user-pic .tooltip {
+	border: 0 solid rgb(102, 26, 9);
+	border-width: 1px 0 0 1px;
+	background: #fda;
+	opacity: 0.85;
+	filter: alpha(opacity=85);
+	padding: 3px;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+#user-pic img {
+	width: 198px;
+	height: 248px;
+	border: 1px solid #ccc;
+}
+/* Picture change dialog */
+#change-pic {
+	width: 400px;
+}
+#change-pic form {
+	margin: 3px 0;
+}
+#change-pic .option {
+	margin-top: 5px; 
+}
+#change-pic .album-option {
+	margin: 5px 0 0 20px;
+}
+#change-pic .kj-button {
+	padding: 6px 12px 5px; margin-right: 5px;
+}
+
+#graphic, #graphic img {
+	width: 100%;
+	height: 80px;
+}
+#status {
+	margin-top: 22px;
+	font-size: 18px;
+	width: 560px;
+	height: 53px;
+}
+#status-text {
+	margin-top: 2px;
+}
+#status-text.active {
+	cursor: pointer;
+}
+#status-text.hovering {
+	-moz-box-shadow: 0 0 3px #661a09; -webkit-box-shadow: 0 0 3px #661a09; box-shadow: 0 0 3px #661a09; border: 1px solid #996255;
+}
+#status input {
+	width: 551px;
+	margin: 0 1px;
+	padding: 3px;
+	background: none;
+	border: 1px solid #666;
+	font-size: 18px;
+}
+
+#options {
+	margin-top: 5px;
+}
+
+#left-col .header {
+	font-size: 14px;
+	font-weight: bold;
+	padding-top: 3px;
+}
+#left-col .header a {
+	text-decoration: none;
+}
+#left-col .separator {
+	height: 2px;
+	width: 100%;
+	background: #661a09;
+	margin: 3px 0;
+}
+
+.after-banner {
+	margin-bottom: 15px;
+}
+#tabs table .label {
+	width: 120px;
+	max-height: 14px;
+	padding: 6px 0px 6px 10px;
+	border: 1px solid black;
+	font-size: 10px;
+}
+#tabs .active {
+	background: #A04010;
+}
+.info-section .header {
+	border-bottom: 2px solid #710600;
+	margin: 12px 0 8px;
+	font-weight: bold;
+}
+.info-section .header .title {
+	font-size: 14px;
+	float: left;
+}
+.info-section .header .options {
+	margin-top: 2px;
+	float: right;
+	cursor: pointer;
+}
+.info-section button {
+	margin: 5px;
+}
+#gen-info td { min-width: 120px; padding-right: 8px; }
+#hobbies .label { margin: 5px 0px; font-weight: bold; }
+#hobbies .links{ margin-bottom: 15px; padding: 0px 2px; font-size: 11px; }
+
+#left-col .icontent {
+	padding: 8px 0;
+}
+#friends td {
+	width: 60px;
+	text-align: center;
+	padding: 0 3px;
+	vertical-align: top;
+}
+#friends table {
+	padding: 3px 1px 0;
+}
+#friends td a div {
+	width: 60px;
+	overflow: hidden;
+}
+#beers {
+	min-height: 300px;
+}
+
+/* Social Favorites Tab */
+#favorites {
+	padding-top: 25px;
+}
+#favorites .options {
+	padding: 5px;
+}
+#favorites .column {
+	width: 200px;
+	padding: 0 40px;
+}
+#favorites .sep {
+	width: 199px;
+	border-right: 1px solid #661a09;
+}
+#favorites .header {
+	background: #661a09;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	padding: 5px;
+}
+#favorites .list, #favorites .form {
+	padding: 15px 5px 8px;
+}
+#favorites button {
+	margin-left: 5px;
+}
+.form .row {
+	padding: 3px 0;
+}
+.form .ordinal {
+	text-align: right;
+	display: inline-block;
+	width: 17px;
+	padding-right: 5px;
+}
+
+
+#about #photo-section {
+	text-align: center;
+}
+#about #photo-section img.empty {
+	min-height: 100px;
+	min-width: 100px;
+	border: 1px solid #999;
+}
+
+.beer {
+	margin: 3px 0 15px;
+}
+.beer .image, .edit .image {
+	width: 100px;
+	height: 125px;
+	float: left;
+}
+.beer .info {
+	float: left;
+	width: 330px;
+	margin: 0 8px 0 12px;
+}
+.beer .heading {
+	margin-bottom: 4px;
+}
+.beer .title {
+	font-size: 14px;
+	font-weight: bold;
+	color: rgb(102, 26, 9);
+}
+.beer .time {
+	display: inline-block;
+	margin-left: 4px;
+}
+.beer .options {
+	float: left;
+	width: 108px;
+	height: 100%;
+}
+.beer .options a {
+	display: block;
+	margin-top: 2px;
+	color: rgb(102, 26, 9);
+	float: right;
+}
+.beer .options button {
+	float: right;
+}
+.beer .ratebar {
+	margin: 5px 2px 10px;
+	float: right;
+}
+
+#beers .edit textarea {
+	height: 62px;
+	width: 350px;
+}
+
+.highlighted-content {
+	border: 1px solid #661a09;
+}
+
+.edit table {
+	float: left;
+	margin-left: 10px;
+}
+
+.preview {
+}
+.preview .ratebar {
+	float: right;
+}
+.preview .title {
+	float: left;
+}
+.preview .time {
+	float: left;
+	margin: 1px 0 0 6px;
+}
+.preview .text {
+	height: 20px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-left: 8px;
+	color: #666;
+	font-style: italic;
+}
+
+.beer .comment-link {
+	text-decoration: underline;
+	color: #661a09;
+	cursor: pointer;
+	float: right;
+	margin-top: 45px;
+}
+.beer .editable .comment-link {
+	margin-top: 5px;
+}
+.beer .comments {
+	padding-left: 40px;
+}
+.beer .comments .text {
+	width: 387px;
+}
+
+#misc textarea {
+	width: 99%;
+	min-height: 100px;
+}
+#misc button {
+	float: right;
+	margin: 4px 0 0 4px;
+}
+
+#honor button {
+	margin: 10px 5px 5px;
+}
+.constrained {
+	max-height: 300px;
+	overflow-y: scroll;
+}
+
+.header .link {
+	float: right;
+	font-size: 11px;
+	color: #999;
+	font-style: italic;
+}
+.header .link a {
+	text-decoration: none;
+}

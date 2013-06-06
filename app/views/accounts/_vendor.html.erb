@@ -1,0 +1,25 @@
+<div id="profile-text" class="clearfix">
+		Vendor Profile:
+		<p>Welcome to Kaljaa! Kaljaa is a social network design to specifically to cater almost every aspect of the beer and brewery industry.   This site is made to benefit every Restaurant/Store in business to business and business to customer relationships with networking, news, blogs, beer releases and reviews, while promoting you and providing marketing data.</p>
+		<p>So what do you get when you subscribe to Kaljaa as a Restaurant/Store?  When you subscribe, you receive your own personal profile specifically labeled and designed for a Restaurant/Store.  With the Restaurant/Store profile you have access to the whole network of Kaljaa and certain tools embedded in your profile that will help you communicate with all the aspects of the beer industry and culture.  You will be able to communicate and get up to date information with other Restaurant/Store, brewerys, media/critics, customers/beer lovers, and supplier/distributors.  This site brings everything a brewery needs in one easy to use and simplified site.</p>
+</div>
+
+<%= form_for(@account) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+
+	<%= f.label :password_confirmation, "Confirmation" %>
+	<%= f.password_field :password_confirmation %>
+
+	<%= f.radio_button :authorization, "1"%>
+	<%= f.label :authorization_terms, "I agree to the Terms of service" %>
+
+	<%= f.hidden_field :ty, :value => params[:type]  %>
+
+	<%= f.submit "Create my account"%>
+<% end %>

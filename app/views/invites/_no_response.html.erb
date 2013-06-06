@@ -1,0 +1,16 @@
+<ul>
+	<% @not_responded.each do |not_responded| %>
+		<li>
+			<%= link_to (not_responded.profile.s1+" "+not_responded.profile.s2), not_responded.profile %> <br>
+			<% if (current_profile.id == @event.profile_id) || event_admin %>
+				<% if not_responded.admin == 0 %>
+						<%= link_to "Make Admin", admin_invite_path(not_responded)%>
+				<% else %>
+						<p>Admin  						
+						<%= link_to "Undo Admin Status", admin_invite_path(not_responded)%></p>
+				<% end %>
+				<%= link_to "Uninvite", not_responded, method: :delete, data: { confirm: "Un-invite this Lame-o?" } %>
+			<% end %>
+		</li>
+	<% end %>
+</ul>

@@ -1,0 +1,13 @@
+<h1>hello world</h1>
+
+<section>
+	<%= render 'shared/stats' %>
+</section>
+<%= render 'follow_form' if signed_in? %>
+<% if @account.microposts.any? %>
+	<h3>Microposts (<%= @account.microposts.count %>)</h3>
+	<ol class="microposts">
+		<%= render @microposts %>
+	</ol>
+	<%= will_paginate @microposts %>
+<% end %>

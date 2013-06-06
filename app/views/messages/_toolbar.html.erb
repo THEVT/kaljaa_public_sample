@@ -1,0 +1,14 @@
+<ul>
+    <li>
+      <%= link_to 'New Message', new_message_path %>
+    </li>
+    <li>
+      <%= link_to 'Inbox', conversations_path(box: :inbox) %>
+    </li>
+    <li>
+      <%= link_to 'Sent', conversations_path(box: :sentbox) %>
+    </li>
+    <li>
+      <%= link_to 'Trash', conversations_path(box: :trash) %>
+    </li>
+</ul>

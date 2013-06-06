@@ -1,0 +1,7 @@
+	<h3>Photos (<%= @album.photo.count %>)</h3>
+<% if @album.photo.any? %>
+	<ul class="beers">
+		<%= render @photos %>
+	</ul>
+	<%= will_paginate @photos %>
+<% end %>

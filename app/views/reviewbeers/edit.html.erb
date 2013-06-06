@@ -1,0 +1,41 @@
+<%= form_for(@reviewbeer) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+
+	<%= f.label :photo, 'Add a photo of beer:' %>		
+		<%= f.file_field :photo %>
+
+		<%= f.label :brewery_name, 'Brewery:'%>
+		<%= f.text_field :brewery_name, placeholder: "Add Brewery Name..." %>
+
+		<%= f.label :beer_name, 'Beer name:' %>	
+		<%= f.text_field :beer_name, placeholder: "Add Beer Name..." %>
+
+		<%= f.label :personal_brew, 'Personal Brew:' %>	
+		<%= f.check_box :personal_brew %>
+
+	<%= f.label :grade %>	
+	<%= f.select :grade, [['A+'], ['A'], ['A-'], ['B+'], ['B'], ['B-'], ['C+'], ['C'], ['C-'], ['D+'], ['D'], ['D-'], ['F']] %>
+
+
+	<%= f.label :beer_type, 'Type:' %>	
+	<%= f.select :beer_type, [['Undefined'], ['Ale'], ['Barley Wine'], ['Belgian'], ['Bitter'], ['Bock'], ['Brown Ale'], ['Dark Lager'], ['IPA'], ['Lager'], ['Lambic'], ['Mead'], ['Oktoberfest'], ['Pale Ale'], ['Pale Lager'], ['Pilsner'], ['Porter'], ['Seasonal'], ['Sour'], ['Stout'], ['Wheat Beer'], ['Wild Ale'], ['Cider']] %>	
+
+<%= f.label :content, 'Review:' %>		
+<%= f.text_area :content, placeholder: "Add some activities..." %>
+
+<%= f.label :look, 'Look:'%>
+		<%= f.text_field :look %> <span>out of 5</span>
+
+<%= f.label :look, 'Smell:'%>
+		<%= f.text_field :smell %> <span>out of 5</span>
+
+<%= f.label :look, 'Taste:'%>
+		<%= f.text_field :taste %> <span>out of 5</span>
+
+<%= f.label :look, 'Feel:'%>
+		<%= f.text_field :feel %> <span>out of 5</span>
+	
+	<%= f.submit "Save changes"%>
+<% end %>
+
+			

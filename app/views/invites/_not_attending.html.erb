@@ -1,0 +1,16 @@
+<ul>
+	<% @not_attending.each do |not_attending| %>
+		<li>
+			<%= link_to (not_attending.profile.s1+" "+not_attending.profile.s2), not_attending.profile %> <br>
+			<% if (current_profile.id == @event.profile_id) || event_admin %>
+				<% if not_attending.admin == 0 %>
+						<%= link_to "Make Admin", admin_invite_path(not_attending)%>
+				<% else %>
+						<p>Admin  						
+						<%= link_to "Undo Admin Status", admin_invite_path(not_attending)%></p>
+				<% end %>
+				<%= link_to "Uninvite", not_attending, method: :delete, data: { confirm: "Un-invite this Lame-o?" } %>
+			<% end %>
+		</li>
+	<% end %>
+</ul>

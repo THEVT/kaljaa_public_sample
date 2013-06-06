@@ -1,0 +1,39 @@
+<% if @blog.event_id != nil %>
+		<%= @blog.event.title %>
+<% end %>
+<% if @blog.group_id != nil %>
+		<%= @blog.group.title %>
+<% end %>
+<%= @blog.title %>
+<% if current_profile?(@blog.profile) && !@blog_album %>
+	<%= form_for(@album) do |f| %>
+		<%= render 'shared/error_messages', object: f.object %>
+		<div class="field">
+
+			<%= f.hidden_field :title, :value => @blog.title %>
+
+			<%= f.hidden_field :description, :value => '' %>
+
+			<%= f.hidden_field :blog_id, :value => @blog.id %>
+
+		</div>
+		<%= f.submit "Add Photos"%>
+	<% end %>
+<% else %>
+	<%= link_to "Photos", [@blog, @blog_album] %>
+<% end %>
+<%= @blog.content.html_safe %>
+<% if current_profile?(@blog.profile) %>
+		<%= link_to 'Edit Blog',  edit_blog_path(@blog.id) %>
+		<%= link_to "delete", @blog, method: :delete,
+				                 data: { confirm: "You sure?" },
+				                 title: @blog.content %>
+	<% end %>
+
+<%= link_to "Return to Blog Central", blogs_path %>
+<% if @blog.event_id != nil %>
+		<%= link_to "Return to Event", event_path(@blog.event_id) %>
+<% end %>
+<% if @blog.group_id != nil %>
+		<%= link_to "Return to Group", group_path(@blog.group_id) %>
+<% end %>

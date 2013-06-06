@@ -1,0 +1,13 @@
+
+<li>
+	<%= link_to blog.title, blog %> <br>
+	<%= blog.profile.s1 %>
+	Posted <%= time_ago_in_words(blog.created_at) %> ago.
+	<% if current_profile?(blog.profile) %>
+		<%= link_to 'Edit Blog',  edit_blog_path(blog.id) %>
+		<%= link_to "delete", blog, method: :delete,
+							 data: { confirm: "You sure?" },
+							 title: blog.content %>
+	<% end %>
+
+</li>

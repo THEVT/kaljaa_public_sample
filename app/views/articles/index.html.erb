@@ -1,0 +1,18 @@
+<%= link_to "Start News Article", new_article_path %>
+
+<h1>News</h1>
+
+<%= will_paginate %>
+
+<ul class="list_3_12">
+<% @articles.each do |article| %>
+	<li>
+	<%= link_to article.title, article %> <br>
+	<%= article.profile.s1 %>
+	Posted <%= time_ago_in_words(article.created_at) %> ago.
+
+	</li>
+<% end %>
+</ul>
+
+<%= will_paginate %>

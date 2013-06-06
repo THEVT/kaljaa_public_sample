@@ -1,0 +1,212 @@
+.greyfill {
+	height: 170px;
+	position: absolute;
+}
+.i {
+	padding-top: 15px;
+}
+.overlay {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+/* Dialogs */
+.modal {
+	z-index: 400;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+	background: #000;
+}
+.dialog {
+	z-index: 500;
+	padding: 15px;
+	background: #fff;
+	border: 1px solid $kaljaacolor;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	position: absolute;
+}
+
+body { min-width: 1080px;}
+#banner { background: $kaljaacolor; height: 100px; }
+#banner a { text-decoration: none; }
+#logo { float: left; width: 134px; height: 75px; *filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/assets/logo.png",sizingMethod="scale"); }
+a>#logo { background-image: url(/assets/logo.png); }
+
+#navigation div.left { float: left; margin: 0px 15px 0px 5px; padding-top: 3px; }
+#navigation div.right { float: right; margin: 0px 5px 0px 15px; }
+#navigation { color: #fee; font-weight: bold; font-size: 12px; }
+#navigation div.right .nav_link	{ position: relative; top: 3px; }
+
+.nav_button_link,.nav_link { color: #fff; background: none; border-width: 0px; padding: 0; font-weight: bold; font-family: Verdana, Sans-Serif; font-size: 12px; cursor: pointer; height: 18px; }#cheers { float: right; padding: 5px; color: white; font-weight: bold; }
+
+.user-pic { background: white; width: 144x; height: 172px; }
+#kj-search-bar { margin-bottom: 134px; }
+#kj-ads { padding: 10px 20px;}
+input.kj-search { background: #fff url(/assets/search.png) no-repeat 2px 2px; padding: 2px 0px 0px 18px; width: 163px;}
+.clear-text {
+	color: #888;
+	font-style: italic;
+}
+
+#large-col {
+	width: 760px;
+	float: left;
+	position: relative;
+	padding-bottom: 20px;
+}
+#left-col,#right-col{
+	width: 200px;
+	position: relative;
+}
+#left-col{
+	float: left;
+}
+#right-col{
+	float: right;
+}
+#middle-col {
+	width: 560px;
+	padding: 0 20px;
+	float: left;
+	position: relative;
+}
+.ratebar {
+	background-image: url(/assets/ratestars.png);
+	width: 90px;
+	height: 18px;
+	position: relative;
+}
+.ratebar .voteless {
+	position: absolute;
+	top: 2px;
+	left: 15px;
+	text-shadow: 0 0 3px rgba(255,150,100,1);
+	font-weight: bold;
+	font-size: 12px;
+	color: $kaljaacolor;
+}
+.ratebar.change {
+	cursor: pointer;
+}
+.ratestar {
+	width: 18px;
+	height: 18px;
+	float: left;
+}
+
+.kj-tab-list {
+	
+}
+.kj-tab-selector {
+	background: $kaljaacolor;
+	color: white;
+	float: left;
+	font-size: 14px;
+	font-weight: bold;
+	height: 18px;
+	margin: 0 2px;
+	padding: 6px 0;
+	text-align: center;
+	vertical-align: center;
+	cursor: pointer;
+	-moz-border-radius-bottomleft: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+}
+.kj-separator {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.time {
+	color: #444;
+	font-size: 10px;
+}
+
+.page-opt .kj-button[disabled].black {
+	background: #999;
+	border-color: #ccc;
+	cursor: default;
+}
+
+.calendar table {
+	width: 100%;
+	border: 1px solid $kaljaacolor;
+	background: $kaljaacolor;
+}
+.calendar thead {
+	color: white;
+}
+.calendar .date {
+	display: inline-block;
+	margin-right: 5px;
+}
+.calendar td {
+	height: 50px;
+	width: 75px;
+	vertical-align: top;
+	background: white;
+}
+.calendar td.today {
+	background: #ccc;
+}
+.cal-header {
+	margin: 0;
+	border-width: 0;
+	background: $kaljaacolor;
+	color: white;
+	padding: 5px 5px 0;
+}
+.cal-header .number {
+	display: inline-block;
+	text-align: center;
+	width: 516px;
+}
+.cal-header .arrow {
+	background: #ddd;
+	color: black;
+	font-weight: bold;
+	padding: 0 5px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	cursor: pointer;
+	
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+.calendar td a {
+	display: inline-block;
+}
+.tooltip {
+	display: none;
+	border: 2px solid #aaa;
+	background: #eee;
+	padding: 15px;
+	z-index: 9000;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	width: 240px;
+}
+.tooltip img {
+	max-width: 100px;
+	max-height: 100px;
+	margin-right: 8px;
+	float: left;
+}
+.tooltip p {
+	padding: 0;
+	margin: 0;
+}
+
+/**********Exposed Centrals**********/
+#banner-unauthed { background: $kaljaacolor; height: 75px; }
+#banner-unauthed a { text-decoration: none; font-size: 18px; bottom: 5px; }
+#banner-unauthed #navigation { float: left; font-size: 18px; padding-top: 37px; }
+#banner-unauthed #navigation div { display: inline-block; padding-left: 12px; }
+#auth table { color: white; float: right; margin-top: 12px; }

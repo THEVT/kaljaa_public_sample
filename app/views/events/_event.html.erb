@@ -1,0 +1,14 @@
+
+<li>
+	<%= image_tag event.photo.url(:thumb) %>
+	<%= link_to event.title, event %> <br>
+	<%= event.profile.s1 %>
+	Posted <%= time_ago_in_words(event.created_at) %> ago.
+	<% if current_profile?(event.profile) %>
+		<%= link_to 'Edit Event',  edit_event_path(event.id) %>
+		<%= link_to "delete", event, method: :delete,
+							 data: { confirm: "You sure?" },
+							 title: event.description %>
+	<% end %>
+
+</li>

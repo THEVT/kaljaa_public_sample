@@ -1,0 +1,18 @@
+<%= link_to "Start New Album", new_profile_album_path %>
+
+<h1>Albums</h1>
+
+<%= will_paginate %>
+
+<ul class="list_3_12">
+<% @albums.each do |album| %>
+	<li>
+	<%= link_to album.title, album %> <br>
+	<%= album.profile.s1 %>
+	Posted <%= time_ago_in_words(album.created_at) %> ago.
+
+	</li>
+<% end %>
+</ul>
+
+<%= will_paginate %>

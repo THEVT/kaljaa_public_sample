@@ -1,0 +1,92 @@
+
+a,a:visited,a:hover { color: $kaljaacolor; }
+body { background: $kaljaacolor; }
+#main { /*background: $kaljaacolor;*/ min-width: 800px;}
+
+#info { background-image: url(/images/gray.png); background-repeat: repeat-x; background-color: #e6e6e6; padding: 20px; }
+.content { width: 800px; }
+#logo { float: left; }
+#logo #logo-img { width: 500px; height: 250px; }
+#share a, #share iframe {
+	float:right;
+	display: inline-block;
+	padding: 0 25px;
+}
+#login { float: right; margin-top: 20px; position: relative; max-width: 455px; }
+#slogan { position: absolute; top: 208px; left: 323px; color: $kaljaacolor; font-style:italic; font-size: 28px; font-weight: bold; font-family: Times New Roman; }
+
+#info #text { font-size: 17px; color: #484848; font-weight: bold; padding: 10px 0 25px 0; width: 800px; }
+
+.error { color: red; padding: 4px 0; }
+
+#secondary { color: white; padding-bottom: 40px; z-index: 0; }
+#secondary .header { font-weight: bold; font-size: 14px; margin: 15px 0 20px 0; }
+
+#banner a { color: white; }
+
+input[disabled] {
+	background: #ccc;
+}
+#reg-form .disabled {
+color: #666;
+}
+
+#centrals {
+	position: absolute;
+	bottom: -24px;
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	z-index: 100;
+}
+#centrals .centered {
+	border: 1px solid black;
+	display: inline-block;
+	background: #ddd;
+	padding: 5px;
+	zoom:1;*display:inline;_height:35px;
+}
+#centrals a {
+	margin: 3px 15px 0;
+	display: inline-block;
+}
+
+.profile-type { float: left; width: 159px; }
+#profile-types { height: 240px; }
+.profile-header { font-weight: bold; margin: 0 0 4px 13px; font-size: 13px; }
+.desc { color: #ccc; width: 125px; margin: 0 13px 0 13px; height: 120px; }
+.profile-type .center-button { margin-top: 5px; text-align: center; }
+.profile-type .center-button button { width: 140px; }
+
+.pointer {
+	cursor: pointer;
+}
+
+.separator {
+	float: left;
+	width: 1px;
+	height: 160px;
+	background: #ccc;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#661a09), to(#661a09), color-stop(.5,#cccccc));
+	background: -moz-gradient(linear, 0% 0%, 0% 100%, from(#661A09), to(#661A09), color-stop(.5,#cccccc));
+}
+
+/* Registration pages */
+
+#reg-info { float: left; padding-bottom: 35px; }
+#logo-med { height: 150px; width: 300px; }
+#medium-slogan { position: absolute; top: 127px; left: 198px; color: $kaljaacolor; font-style:italic; font-size: 16px; font-weight: bold; font-family: Times New Roman; }
+#profile-text { width: 345px; }
+
+#reg-form table .label { font-size: 11px; text-align: right; }
+#reg-form table th.label { font-size: 13px; padding-bottom: 10px; }
+#reg-form label { font-size: 11px; }
+#reg-form button { min-width: 150px; margin-top: 15px; }
+
+img.thumb {
+	width: 50px;
+	height: 50px;
+}
+
+.kj-button { -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000; box-shadow: 0 0 2px #000; padding: 6px 12px 5px; }

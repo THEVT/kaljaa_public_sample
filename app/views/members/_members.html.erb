@@ -1,0 +1,16 @@
+<ul>
+	<% @members.each do |members| %>
+		<li>
+			<%= link_to (members.profile.s1+" "+members.profile.s2), members.profile %> <br>
+			<% if (current_profile.id == @group.profile_id) || group_admin %>
+				<% if members.admin == 0 %>
+						<%= link_to "Make Admin", admin_member_path(members)%>
+				<% else %>
+						<p>Admin  						
+						<%= link_to "Undo Admin Status", admin_member_path(members)%></p>
+				<% end %>
+				<%= link_to "Delete", members, method: :delete, data: { confirm: "Delete this Lame-o from the group?" } %>
+			<% end %>
+		</li>
+	<% end %>
+</ul>

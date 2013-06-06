@@ -1,0 +1,28 @@
+<% if current_user.admin? || current_user?(@account) %>
+<p> Hello there </p>
+	<%if !Honorablebeer.exists?(profile_id: @profile.id) %>
+		<%= form_for(@honorablebeer) do |f| %>
+		  <%= render 'shared/error_messages', object: f.object %>
+		  <div class="field">
+		    <%= f.text_area :content, placeholder: "Add some honorablebeers..." %>
+		  </div>
+		  <%= f.submit "Post"%>
+		<% end %>
+	<% else %>
+		<p>
+			<b>Honorable Mentions:</b>
+			<%= best_in_place @profile.honorablebeer, :content, type: :textarea %>
+		</p>
+
+	<%= link_to 'Edit Honorable Mentions',  edit_honorablebeer_path(@honorablebeer_present) %>
+	<% end %>
+
+<% else %>
+
+	<p>
+		<b>Honorable Mentions:</b>
+		<%= simple_format @profile.honorablebeer.content %>
+	</p>
+
+
+<% end %>

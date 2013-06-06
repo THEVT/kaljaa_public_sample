@@ -1,0 +1,23 @@
+
+<%= form_for(@invite) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	<div class="field">
+	<%= f.hidden_field :group_id, :value => @group.id %>
+	<ul>
+		<% @profiles.each do |f| %>
+			<li>
+			<!-- make this more efficient group helper-->
+			<% if invited(f) %>
+				<%= check_box_tag 'profile_ids[]', f.id %>
+				<%= link_to f.s1+' '+f.s2, f%>
+			<% else %>
+				<%= link_to f.s1+' '+f.s2, f%> 
+				<p>Already a member</p>
+			<% end %>
+			</li>
+		<% end %>
+	</ul>
+
+	</div>
+	<%= f.submit "Invite"%>
+<% end %>

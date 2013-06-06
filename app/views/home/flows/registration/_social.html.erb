@@ -1,0 +1,33 @@
+<div id="info"><div class="content"><div class="clearfix" style="width: 100%;">
+	<div>
+		<div id="reg-info">
+			<a href="/"><%= image_tag("logo-big.gif", {:id => "logo-med"}) %></a>
+			<div id="medium-slogan"><%=@slogan%></div>
+		</div>
+		<div id="login">
+			<form id="reg-form" action="/register?type=social" enctype="multipart/form-data" method="post">
+				<table>
+					<tr><th class="label">Registration Information</th><td></td></tr>
+					<tr><td class="label">First Name</td><td><input name="fname" size="<%=Constants::LOGIN_SIZE%>"/></td></tr>
+					<tr><td class="label">Last Name</td><td><input name="lname" size="<%=Constants::LOGIN_SIZE%>"/></td></tr>
+					<tr><td class="label">City</td><td><input name="city" size="<%=Constants::LOGIN_SIZE%>"/></td></tr>
+					<tr><td class="label">State</td><td><select name="state"><%Constants::STATES.each do |state|%><option value="<%=state%>"><%=state%><%end%></select></td></tr>
+					<tr><td class="label">Zip Code</td><td><input name="zip" size="<%=Constants::LOGIN_SIZE%>"/></td></tr>
+					<tr><td class="label">Email</td><td><input name="email" size="<%=Constants::LOGIN_SIZE%>"/></td></tr>
+					<tr><td class="label">Password</td><td><input type="password" name="password" size="<%=Constants::LOGIN_SIZE%>"/></td></tr>
+					<tr><td class="label">Confirm Password</td><td><input type="password" name="password_conf" size="<%=Constants::LOGIN_SIZE%>"/></td></tr>
+					<tr><td></td><td>
+						<input type="checkbox" name="terms" value="1" /> I Agree to the <a class="underline link" onclick="Client.showWindow('/terms')">Terms of Service</a></label>
+					</td></tr>
+					<tr><td></td><td><input type="submit" class="kj-button red" value="Register" /></td></tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	<div id="profile-text" class="clearfix">
+		Social Profile:
+		<p>Welcome to Kaljaa! Kaljaa is a social network design to specifically to cater almost every aspect of the beer and brewery industry.   This site is for everyone who enjoys beer.  With Kaljaa you can connect to all aspects of the Beer Industry and Culture, such as Brewerys, Media/Critics, other beer lovers, Suppliers/Distributors, and Stores/Restaurants.  You also can see up to date news, blogs, beer reviews/releases, beer fun, etc.</p>
+	</div>
+</div></div></div>
+<div id="secondary" class="content">
+</div>

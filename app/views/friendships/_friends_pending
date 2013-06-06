@@ -1,0 +1,20 @@
+<% unless @user.pending_friends.empty? or hide_edit_links? %>
+    <tr>
+      <th colspan="3" align="left">
+        <%= pluralize(@user.pending_friends.count, "pending friend") %>
+      </th>
+    </tr>
+    <% @user.pending_friends.each do |pending_friend| %>
+    <tr>
+      <td><%= link_to thumbnail_tag(pending_friend),
+                      profile_for(pending_friend) %></td>
+      <td><%= link_to pending_friend.name,
+                      profile_for(pending_friend) %></td>
+      <td><%= link_to "Cancel request",
+                      { :controller => "friendship", :action => "cancel",
+                        :id => pending_friend.screen_name },
+                      :confirm =>
+                      "Cancel friendship request?" %></td>
+    </tr>
+    <% end %>
+  <% end %>

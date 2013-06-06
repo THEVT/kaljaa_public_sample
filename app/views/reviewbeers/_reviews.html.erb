@@ -1,0 +1,10 @@
+<h1>hello world</h1>
+
+<% if @profile.reviewbeer.any? %>
+	<h3>Beers (<%= @profile.reviewbeer.count %>)</h3>
+	<ol class="beers">
+		<%= render @reviewbeers %>
+	</ol>
+	<%= will_paginate @reviewbeers %>
+<% end %>
+

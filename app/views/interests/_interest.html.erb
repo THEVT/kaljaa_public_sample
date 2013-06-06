@@ -1,0 +1,28 @@
+<% if current_user.admin? || current_user?(@account) %>
+<p> Hello there </p>
+	<%if !Interest.exists?(profile_id: @profile.id) %>
+		<%= form_for(@interest) do |f| %>
+		  <%= render 'shared/error_messages', object: f.object %>
+		  <div class="field">
+		    <%= f.text_area :content, placeholder: "Add some interests..." %>
+		  </div>
+		  <%= f.submit "Post"%>
+		<% end %>
+	<% else %>
+		<p>
+			<b>Interests:</b>
+			<%= best_in_place @profile.interest, :content, type: :textarea %>
+		</p>
+
+	<%= link_to 'Edit Interests',  edit_interest_path(@interest_present) %>
+	<% end %>
+
+<% else %>
+
+	<p>
+		<b>Interests:</b>
+		<%= @profile.interest.content %>
+	</p>
+
+
+<% end %>

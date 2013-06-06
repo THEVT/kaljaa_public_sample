@@ -1,0 +1,7 @@
+	<h3>Blogs Started (<%= @profile.blog.count %>)</h3>
+<% if @profile.blog.any? %>
+	<ol class="beers">
+		<%= render @blogs %>
+	</ol>
+	<%= will_paginate @blogs %>
+<% end %>

@@ -1,0 +1,24 @@
+<div id="profile-text" class="clearfix">
+		Social Profile:
+		<p>Welcome to Kaljaa! Kaljaa is a social network design to specifically to cater almost every aspect of the beer and brewery industry.   This site is for everyone who enjoys beer.  With Kaljaa you can connect to all aspects of the Beer Industry and Culture, such as Brewerys, Media/Critics, other beer lovers, Suppliers/Distributors, and Stores/Restaurants.  You also can see up to date news, blogs, beer reviews/releases, beer fun, etc.</p>
+</div>
+
+<%= form_for(@account) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+
+	<%= f.label :password_confirmation, "Confirmation" %>
+	<%= f.password_field :password_confirmation %>
+
+	<%= f.radio_button :authorization, "1"%>
+	<%= f.label :authorization_terms, "I agree to the Terms of service" %>
+
+	<%= f.hidden_field :ty, :value => params[:type]  %>
+
+	<%= f.submit "Create my account"%>
+<% end %>

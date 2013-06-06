@@ -1,0 +1,21 @@
+<h1>Friends</h1>
+
+<%= render 'friendships/friends' %>
+
+<h1>All users</h1>
+
+<%= will_paginate %>
+
+<ul class="list_3_12">
+  <% @accounts.each do |account| %>
+    <li>
+      <%= link_to account.email, account %>
+		<% if current_user.admin? && !current_user?(account) %>
+		| <%= link_to "delete", account, method: :delete,
+				                   data: { confirm: "You sure?" } %>
+		  <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate %>

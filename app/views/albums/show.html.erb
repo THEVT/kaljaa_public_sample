@@ -1,0 +1,32 @@
+<% if @album.event_id != nil %>
+		<%= @album.event.title %>
+<% elsif @album.group_id != nil %>
+		<%= @album.group.title %>
+<% elsif @album.article_id != nil %>
+		<%= link_to "Back to "+@album.article.title, article_path(@album.article_id) %>
+<% end %>
+<%= @album.title %>
+<%= @album.description.html_safe %>
+<% if current_profile?(@album.profile) %>
+		<%= link_to 'Edit Album',  edit_album_path(@album.id) %>
+		<%= link_to "delete", @album, method: :delete,
+				                 data: { confirm: "You sure?" },
+				                 title: @album.description %>
+	<% end %>
+
+<%= link_to "Return to Album Central", albums_path %>
+<% if @album.profile_id != nil %>
+		<%= link_to "Return to Profiles Album", profile_albums_path(@album.profile_id) %>
+<% end %>
+<% if @album.event_id != nil %>
+		<%= link_to "Return to Event", event_path(@album.event_id) %>
+<% end %>
+<% if @album.group_id != nil %>
+		<%= link_to "Return to Group", group_path(@album.group_id) %>
+<% end %>
+
+<%= render 'photos/new' %>
+
+<%= render 'photos/photos' %>
+
+

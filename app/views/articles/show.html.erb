@@ -1,0 +1,39 @@
+<% if @article.event_id != nil %>
+		<%= @article.event.title %>
+<% end %>
+<% if @article.group_id != nil %>
+		<%= @article.group.title %>
+<% end %>
+<%= @article.title %>
+<% if current_profile?(@article.profile) && !@article_album %>
+	<%= form_for(@album) do |f| %>
+		<%= render 'shared/error_messages', object: f.object %>
+		<div class="field">
+
+			<%= f.hidden_field :title, :value => @article.title %>
+
+			<%= f.hidden_field :description, :value => '' %>
+
+			<%= f.hidden_field :article_id, :value => @article.id %>
+
+		</div>
+		<%= f.submit "Add Photos"%>
+	<% end %>
+<% else %>
+	<%= link_to "Photos", [@article, @article_album] %>
+<% end %>
+<%= @article.content.html_safe %>
+<% if current_profile?(@article.profile) %>
+		<%= link_to 'Edit News article',  edit_article_path(@article.id) %>
+		<%= link_to "delete", @article, method: :delete,
+				                 data: { confirm: "You sure?" },
+				                 title: @article.content %>
+	<% end %>
+
+<%= link_to "Return to News Central", articles_path %>
+<% if @article.event_id != nil %>
+		<%= link_to "Return to Event", event_path(@article.event_id) %>
+<% end %>
+<% if @article.group_id != nil %>
+		<%= link_to "Return to Group", group_path(@article.group_id) %>
+<% end %>

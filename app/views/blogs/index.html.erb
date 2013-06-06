@@ -1,0 +1,18 @@
+<%= link_to "Start New Blog", new_blog_path %>
+
+<h1>Blogs</h1>
+
+<%= will_paginate %>
+
+<ul class="list_3_12">
+<% @blogs.each do |blog| %>
+	<li>
+	<%= link_to blog.title, blog %> <br>
+	<%= blog.profile.s1 %>
+	Posted <%= time_ago_in_words(blog.created_at) %> ago.
+
+	</li>
+<% end %>
+</ul>
+
+<%= will_paginate %>

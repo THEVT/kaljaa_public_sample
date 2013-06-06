@@ -1,0 +1,27 @@
+
+<% if current_user.admin? || current_user?(@account) %>
+	<%= form_for(@reviewbeer) do |f| %>
+		<%= render 'shared/error_messages', object: f.object %>
+		<div class="field">
+			<%= f.label :photo, 'Add a photo of beer:' %>		
+		<%= f.file_field :photo %>
+
+		<%= f.label :brewery_name, 'Brewery:'%>
+		<%= f.text_field :brewery_name, placeholder: "Add Brewery Name..." %>
+
+		<%= f.label :beer_name, 'Beer name:' %>	
+		<%= f.text_field :beer_name, placeholder: "Add Beer Name..." %>
+
+		<%= f.label :personal_brew, 'Personal Brew:' %>	
+		<%= f.check_box :personal_brew %>
+
+	<%= f.label :grade %>	
+	<%= f.select :grade, [['A+'], ['A'], ['A-'], ['B+'], ['B'], ['B-'], ['C+'], ['C'], ['C-'], ['D+'], ['D'], ['D-'], ['F']] %>
+
+
+	<%= f.label :beer_type, 'Type:' %>	
+	<%= f.select :beer_type, [['Undefined'], ['Ale'], ['Barley Wine'], ['Belgian'], ['Bitter'], ['Bock'], ['Brown Ale'], ['Dark Lager'], ['IPA'], ['Lager'], ['Lambic'], ['Mead'], ['Oktoberfest'], ['Pale Ale'], ['Pale Lager'], ['Pilsner'], ['Porter'], ['Seasonal'], ['Sour'], ['Stout'], ['Wheat Beer'], ['Wild Ale'], ['Cider']] %>
+		</div>
+		<%= f.submit "Post"%>
+	<% end %>
+<% end %>

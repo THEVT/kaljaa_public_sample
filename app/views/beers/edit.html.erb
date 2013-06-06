@@ -1,0 +1,20 @@
+<%= form_for(@beer) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+
+	<%= f.label :photo %>
+	<%= f.file_field :photo %>
+	
+	<%= f.label :brewery_name %>
+	<%= f.text_field :beer_name %>
+
+	<%= f.label :beer_name %>
+	<%= f.text_field :beer_name %>
+
+	<%= f.label :content %>
+	<%= f.text_area :content %>
+	
+	<%= f.submit "Save changes"%>
+	<%= link_to "Cancel", @profile %>
+<% end %>
+
+			

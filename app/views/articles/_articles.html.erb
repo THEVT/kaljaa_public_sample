@@ -1,0 +1,8 @@
+
+<% if @profile.article.any? %>
+	<h3>News Started (<%= @profile.article.count %>)</h3>
+	<ol class="beers">
+		<%= render @articles %>
+	</ol>
+	<%= will_paginate @articles %>
+<% end %>

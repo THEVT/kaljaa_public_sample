@@ -1,0 +1,30 @@
+<% if current_user.admin? || current_user?(@account) %>
+<p> Hello there </p>
+	<%if !Misc.exists?(profile_id: @profile.id) %>
+		<%= form_for(@misc) do |f| %>
+		  <%= render 'shared/error_messages', object: f.object %>
+		  <div class="field">
+		    <%= f.text_area :content, placeholder: "Add some miscs..." %>
+		  </div>
+		  <%= f.submit "Post"%>
+		<% end %>
+	<% else %>
+		
+		<b>Miscellaneous Information:</b>
+		
+		<p>
+			<%= best_in_place @profile.misc, :content, type: :textarea %>
+		</p>
+
+	<%= link_to 'Edit Miscellaneous Information',  edit_misc_path(@misc_present) %>
+	<% end %>
+
+<% else %>
+
+	<p>
+		<b>Miscellaneous Information:</b>
+		<%= simple_format @profile.misc.content %>
+	</p>
+
+
+<% end %>

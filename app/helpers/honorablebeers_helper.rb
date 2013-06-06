@@ -1,0 +1,2 @@
+module HonorablebeersHelper
+end

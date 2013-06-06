@@ -1,0 +1,17 @@
+<%= will_paginate @profiles%>
+
+<ul class="list_3_12">
+  <% @profiles.each do |profile| %>
+    <li>
+      <%= link_to (profile.s1+" "+profile.s2), profile %> <br>
+	<%= profile.s4 %>
+	<%= link_to "Add Friend", friendships_path(:friend_id => profile), :method => :post %>
+		<% if current_user.admin? && !current_profile?(profile) %>
+		| <%= link_to "delete", profile, method: :delete,
+				                   data: { confirm: "You sure?" } %>
+		  <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate @profiles%>

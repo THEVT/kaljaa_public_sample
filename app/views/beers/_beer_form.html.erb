@@ -1,0 +1,13 @@
+
+<% if current_user.admin? || current_user?(@account) %>
+	<%= form_for(@beer) do |f| %>
+		<%= render 'shared/error_messages', object: f.object %>
+		<div class="field">
+			<%= f.file_field :photo %>
+			<%= f.text_field :brewery_name, placeholder: "Add Brewery Name..." %>
+			<%= f.text_field :beer_name, placeholder: "Add Brewery Name..." %>
+			<%= f.text_area :content, placeholder: "Add some activities..." %>
+		</div>
+		<%= f.submit "Post"%>
+	<% end %>
+<% end %>

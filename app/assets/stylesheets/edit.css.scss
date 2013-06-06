@@ -1,0 +1,41 @@
+#picture {
+	float: left;
+	margin: 0 34px 0 54px;
+	width: 112px;
+	height: 140px;
+	text-align: center;
+	border: 1px solid #999;
+}
+#picture img {
+	border-width: 0;
+}
+#details {
+	width: 560px;
+	padding-top: 0;
+}
+label span {
+	font-size: 14px;
+}
+#summary {
+	width: 400px;
+}
+#photos {
+	float: left;
+	width: 220px;
+}
+.kj-button {
+	padding: 5px 12px;
+	margin: 5px;
+}
+.photo {
+	margin-top: 10px;
+	text-align: center;
+}
+.photo img {
+	width: 150px;
+	margin: auto;
+}
+.photo .kj-button {
+	margin: 3px 2px 0px;
+	padding: 5px 10px 4px;
+}

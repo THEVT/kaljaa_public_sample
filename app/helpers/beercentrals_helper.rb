@@ -1,0 +1,2 @@
+module BeercentralsHelper
+end

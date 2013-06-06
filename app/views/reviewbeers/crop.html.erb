@@ -1,0 +1,12 @@
+<h1> Crop </h1>
+
+<% content_for :javascript_includes do %>
+<%= javascript_include_tag "jquery.Jcrop.min" %>
+<script type="text/javascript" charset="utf-8">
+$(function() {
+	$("#cropbox").Jcrop();
+});
+</script>
+<% end %>
+
+<%= image_tag @beer.photo.url(:large), id: "cropbox" %>

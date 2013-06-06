@@ -1,0 +1,65 @@
+#return-link {
+	margin-top: 10px;
+	font-weight: 18px;
+}
+#kj-search-bar {
+	margin-bottom: 8px;
+}
+.label {
+	display: inline-block;
+	width: 80px;
+	vertical-align: top;
+}
+.form-row {
+	margin: 5px 0 8px;
+}
+form .kj-button {
+	float: right;
+	padding: 6px 12px 5px;
+	margin-right: 5px;
+}
+textarea {
+	width: 675px;
+	height: 250px;
+}
+.message .sender {
+	float: left;
+	margin-right: 10px;
+	text-align: center;
+	width: 80px;
+}
+.message .ts {
+	display: inline-block;
+	margin-bottom: 6px;
+	font-size: 11px;
+}
+.message .title {
+	font-size: 14px;
+}
+.message .actions button {
+	margin-right: 4px;
+}
+.view {
+	margin-top: 10px;
+}
+.view .title,.view .ts {
+	display: inline-block;
+}
+.view .sender {
+	width: 100px;
+	text-align: center;
+	float: left;
+}
+.view .title {
+	font-size: 18px;
+	margin-right: 6px;
+}
+.view .body {
+	margin-top: 5px;
+}
+.actions {
+	margin-top: 5px;
+}
+.actions button {
+	margin: 3px 0;
+}

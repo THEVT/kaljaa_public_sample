@@ -1,0 +1,28 @@
+<div id="info">
+	<div class="content">
+		<% if not @account.nil? %>
+			<div class="error">Your email and password combination was not recognized.</div>
+		<% end %>
+		<div class="clearfix fill">
+			<form id="auth" action="/home/authenticate" method="post">
+				<div class="row">
+					<label><div>Email:</div>
+						<input name="email" size=<%=Constants::LOGIN_SIZE%> maxlength=<%=Constants::EMAIL_MAX_LENGTH%> <% if not @account.nil? %>value="<%=@account.email%>"<% end %>/>
+					</label>
+				</div>
+				<div class="row">
+					<label><div>Password:</div>
+						<input type="password" name="password" size=<%=Constants::LOGIN_SIZE%> maxlength=<%=Constants::PASSWORD_MAX_LENGTH%> />
+					</label>
+				</div>
+				<div class="row">
+					<label>Remember Me? <input type="checkbox" name="remember_me" /></label>
+				</div>
+				<div class="row">
+					<a href="/home/reset">Forget your password?</a>
+				</div>
+				<input class="kj-button red" type="submit" value="Login"/>
+			</form>
+		</div>
+	</div>
+</div>

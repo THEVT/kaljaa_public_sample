@@ -1,0 +1,55 @@
+<% if current_user.admin? || current_user?(@account) %>
+<p> Hello there </p>
+	<%if !Favbeer.exists?(profile_id: @profile.id) %>
+		<%= form_for(@favbeer) do |f| %>
+		  <%= render 'shared/error_messages', object: f.object %>
+		  <div class="field">
+			<%= f.text_field :b1, placeholder: "Add your favorite beers..." %>
+			<%= f.text_field :b2, placeholder: "Add your favorite beers..." %>
+			<%= f.text_field :b3, placeholder: "Add your favorite beers..." %>
+			<%= f.text_field :b4, placeholder: "Add your favorite beers..." %>
+			<%= f.text_field :b5, placeholder: "Add your favorite beers..." %>
+			<%= f.text_field :b6, placeholder: "Add your favorite beers..." %>
+			<%= f.text_field :b7, placeholder: "Add your favorite beers..." %>
+			<%= f.text_field :b8, placeholder: "Add your favorite beers..." %>
+			<%= f.text_field :b9, placeholder: "Add your favorite beers..." %>
+			<%= f.text_field :b10, placeholder: "Add your favorite beers..." %>
+		  </div>
+		  <%= f.submit "Post"%>
+		<% end %>
+	<% else %>
+		<p>Favorite Beers:</b>		
+		<ol>
+			<li><%= best_in_place @profile.favbeer, :b1 %></li>
+			<li><%= best_in_place @profile.favbeer, :b2 %></li>
+			<li><%= best_in_place @profile.favbeer, :b3 %></li>
+			<li><%= best_in_place @profile.favbeer, :b4 %></li>
+			<li><%= best_in_place @profile.favbeer, :b5 %></li>
+			<li><%= best_in_place @profile.favbeer, :b6 %></li>
+			<li><%= best_in_place @profile.favbeer, :b7 %></li>
+			<li><%= best_in_place @profile.favbeer, :b8 %></li>
+			<li><%= best_in_place @profile.favbeer, :b9 %></li>
+			<li><%= best_in_place @profile.favbeer, :b10 %></li>
+		</ol>
+
+	<%= link_to 'Edit Favorite Beers',  edit_favbeer_path(@favbeer_present) %>
+	<% end %>
+
+<% else %>
+
+	<p>Favorite Beers:</b>		
+		<ol>
+			<li><%= @profile.favbeer.b1 %></li>
+			<li><%= @profile.favbeer.b2 %></li>
+			<li><%= @profile.favbeer.b3 %></li>
+			<li><%= @profile.favbeer.b4 %></li>
+			<li><%= @profile.favbeer.b5 %></li>
+			<li><%= @profile.favbeer.b6 %></li>
+			<li><%= @profile.favbeer.b7 %></li>
+			<li><%= @profile.favbeer.b8 %></li>
+			<li><%= @profile.favbeer.b9 %></li>
+			<li><%= @profile.favbeer.b10 %></li>
+		</ol>
+
+
+<% end %>

@@ -1,0 +1,69 @@
+/*
+ * Global styles.
+ */
+ 
+/* Bottom aligned footer */
+html, body { height: 100%; }
+#main { position: relative; background: #fff; min-height: 100%; }
+#wrapper { padding-bottom: 17px; }
+#footer { background: $kaljaacolor; bottom:0; height: 17px; position:absolute; text-align: center; width:100%; }
+#footer a { margin: 0 10px 0 10px; color: white; font-weight: bold; text-decoration: none; }
+
+/* clearfix */
+.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix { display: inline-block; width: 100%; }
+html[xmlns] .clearfix { display: block; }
+* html .clearfix { height: 1%; }
+.clear { clear: both; }
+
+/* Default settings */
+html, body, div, form, h1, h2, h3 { margin: 0; padding: 0; }
+body { background: #000; font-family: Helvetica, Sans-Serif; font-size: 12px; }
+a img, a:active img { border-width: 0; }
+button { font-size: 11px; }
+input { font: inherit; }
+textarea { font-family: Helvetica, Sans-Serif; font-size: 12px; font-weight: none;}
+
+form .row { padding: 6px 0; }
+
+.greyfill { background: #ccc url(/assets/gray.png) repeat-x; }
+
+.content { width: 1000px; margin: auto; position: relative; }
+.left { float: left; }
+.right { float: right; }
+.fill { width: 100%; height: 100%; }
+.underline, a.underline { text-decoration: underline; }
+.red-theme { color: $kaljaacolor; }
+.red-b { background: $kaljaacolor; color: white; }
+.center { text-align: center; }
+
+.kj-load { background: url(/assets/loader.gif) no-repeat center center; width: 100%; min-width: 28px; min-height: 28px; height: 100%; position: relative;}
+
+.kj-flat-button { background: $kaljaacolor; border: none; padding: .25em 1em .3em; color: white; font-weight: bold; font-size: 12px; cursor: pointer; }
+.kj-button { cursor: pointer; display: inline-block; font-family: Helvectica,Sans-Serif; font-weight: bold; outline: none; padding: 3px 12px; text-align: center; text-decoration: none; text-shadow: 0 1px 1px rgba(0,0,0,.3); width: auto; vertical-align: middle; _width:0;_overflow:visible;}
+.kj-button:hover { text-decoration: none; }
+
+.kj-button.black { color: white; border: solid 1px #000; background: #444; background: -webkit-gradient(linear, left top, left bottom, from(#888), to(#222)); background: -moz-linear-gradient(top, #888, #222); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#888888', endColorstr='#222222'); }
+.kj-button.black:hover { background: #222; background: -webkit-gradient(linear, left top, left bottom, from(#555), to(#222)); background: -moz-linear-gradient(top, #555, #222); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#222222'); }
+.kj-button.black:active { background: -webkit-gradient(linear, left top, left bottom, from(#222), to(#888)); background: -moz-linear-gradient(top, #222, #888); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#222222', endColorstr='#888888'); }
+
+.kj-button.red { color: white; border: solid 1px #000; background: #444; background: -webkit-gradient(linear, left top, left bottom, from(#6b291d), to(#252221)); background: -moz-linear-gradient(top, #6b291d, #252221); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6b291d', endColorstr='#252221'); }
+.kj-button.red:hover { background: #222; background: -webkit-gradient(linear, left top, left bottom, from(#422), to(#252221)); background: -moz-linear-gradient(top, #422, #252221); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#422', endColorstr='#252221'); }
+.kj-button.red:active { background: -webkit-gradient(linear, left top, left bottom, from(#252221), to(#6b291d)); background: -moz-linear-gradient(top, #252221, #6b291d); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#252221', endColorstr='#6b291d'); }
+
+.kj-button.white {
+	color: #000;
+	border: solid 1px #999;
+	background: #ccc;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ccc));
+	background: -moz-linear-gradient(top, #fff, #ccc);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#ccc');
+}
+.kj-button.white:hover {
+	background: #eee;
+}
+.kj-button.white:active {
+	background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#fff));
+	background: -moz-linear-gradient(top, #ccc, #fff);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ccc', endColorstr='#fff');
+}

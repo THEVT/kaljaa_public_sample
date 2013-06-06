@@ -1,0 +1,46 @@
+
+<%= form_for(@event) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	<div class="field">
+
+		<%= f.label :photo, 'Add a photo for event:' %>		
+		<%= f.file_field :photo %>
+
+		<%= f.label :title, 'Event Title:' %>	
+		<%= f.text_field :title, placeholder: "Event title..." %>
+
+
+		<%= f.label :exclusive, "Public", :value => "0"  %>
+		<%= f.radio_button :exclusive, 0, :checked => true %>
+		<%= f.label :exclusive, "Private", :value => "1" %>
+		<%= f.radio_button :exclusive, 1 %>
+
+		<%= f.label :major_event, 'Major Event:' %>	
+		<%= f.check_box :major_event %>
+
+		<%= f.label :start_time, 'Start Time:' %>
+		<%= f.datetime_select :start_time, :ampm => true, :minute_step => 5 %>
+
+		<%= f.label :end_time, 'End Time:' %>
+		<%= f.datetime_select :end_time, :ampm => true, :minute_step => 5 %>
+
+		<%= f.label :street, 'Street:' %>	
+		<%= f.text_field :street %>
+
+		<%= f.label :city, 'City:' %>	
+		<%= f.text_field :city%>
+
+		<%= f.label :state, 'State:' %>	
+		<%= f.select :state, states%>
+
+		<%= f.label :zipcode, 'Zipcode:' %>	
+		<%= f.text_field :zipcode%>
+
+		<%= f.label :description, 'Description:' %>		
+		<%= f.text_area :description, placeholder: "Description of event..." %>
+
+	</div>
+	<%= f.submit "Post"%>
+	<%= link_to "Cancel", @profile %>
+<% end %>
+

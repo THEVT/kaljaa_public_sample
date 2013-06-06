@@ -1,0 +1,11 @@
+<%= image_tag @photo.photo.url(:large) %>
+<%= @photo.title %>
+<%= @photo.description.html_safe %>
+<% if current_profile?(@profile) %>
+		<%= link_to 'Edit Album',  edit_photo_path(@photo.id) %>
+		<%= link_to "delete", @photo, method: :delete,
+				                 data: { confirm: "You sure?" },
+				                 title: @photo.description %>
+	<% end %>
+
+<%= link_to "Return to Album", album_path(@photo.album_id) %>

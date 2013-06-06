@@ -1,0 +1,114 @@
+/*****new css styles******/
+
+.button-kaljaa-dark {
+	-moz-box-shadow:inset 0px 1px 0px 0px #756e75;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #756e75;
+	box-shadow:inset 0px 1px 0px 0px #756e75;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #858585), color-stop(1, #383738) );
+	background:-moz-linear-gradient( center top, #858585 5%, #383738 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#858585', endColorstr='#383738');
+	background-color:#858585;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #302d30;
+	display:inline-block;
+	color:#d9d0d9;
+	font-family:arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #473f47;
+}.button-kaljaa-dark:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #383738), color-stop(1, #858585) );
+	background:-moz-linear-gradient( center top, #383738 5%, #858585 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#383738', endColorstr='#858585');
+	background-color:#383738;
+}.button-kaljaa-dark:active {
+	position:relative;
+	top:1px;
+}
+
+/**** mixins ***/
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.list_3_12 ul li{
+	color: #555;
+	
+}
+
+/* microposts */
+
+.microposts {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+.content {
+  display: block;
+}
+.timestamp {
+  color: #aaa;
+}
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+/* sidebar */
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid #aaa;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: #000066;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+}

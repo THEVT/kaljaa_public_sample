@@ -1,0 +1,16 @@
+<ul>
+	<% @maybe.each do |maybe| %>
+		<li>
+			<%= link_to (maybe.profile.s1+" "+maybe.profile.s2), maybe.profile %> <br>
+			<% if (current_profile.id == @event.profile_id) || event_admin %>
+				<% if maybe.admin == 0 %>
+						<%= link_to "Make Admin", admin_invite_path(maybe)%>
+				<% else %>
+						<p>Admin  						
+						<%= link_to "Undo Admin Status", admin_invite_path(maybe)%></p>
+				<% end %>
+				<%= link_to "Uninvite", maybe, method: :delete, data: { confirm: "Un-invite this Lame-o?" } %>
+			<% end %>
+		</li>
+	<% end %>
+</ul>

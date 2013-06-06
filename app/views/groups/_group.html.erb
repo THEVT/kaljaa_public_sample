@@ -1,0 +1,14 @@
+
+<li>
+	<%= image_tag group.photo.url(:thumb) %>
+	<%= link_to group.title, group %> <br>
+	<%= group.profile.s1 %>
+	Posted <%= time_ago_in_words(group.created_at) %> ago.
+	<% if current_profile?(group.profile) %>
+		<%= link_to 'Edit Group',  edit_group_path(group.id) %>
+		<%= link_to "delete", group, method: :delete,
+							 data: { confirm: "You sure?" },
+							 title: group.description %>
+	<% end %>
+
+</li>

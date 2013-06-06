@@ -1,0 +1,19 @@
+<% if current_user.admin? || current_user?(@account) %>
+	<%= form_for(@photo) do |f| %>
+		<%= render 'shared/error_messages', object: f.object %>
+		<div class="field">
+		<%= f.label :photo, 'Add a photo of beer:' %>		
+		<%= f.file_field :photo %>
+
+		<%= f.label :title, 'Title:' %>	
+		<%= f.text_field :title, placeholder: "Photo title..." %>
+
+		<%= f.label :description, 'Brief Description:' %>		
+		<%= f.text_field :description, :rows => 20, :cols => 100 %>
+
+		<%= f.hidden_field :album_id, value: @album.id  %>
+
+		</div>
+		<%= f.submit "Add Photo"%>
+	<% end %>
+<% end %>

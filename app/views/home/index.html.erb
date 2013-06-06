@@ -1,0 +1,87 @@
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+<script src="http://widgets.digg.com/buttons.js" type="text/javascript"></script>
+
+<div id="info">
+	<div class="content">
+		<div class="clearfix fill">
+			<div id="logo">
+				<img id="logo-img" src="/assets/logo-big.gif" />
+				<div id="slogan"></div>
+				<div id="share">
+					<!--<a href="http://www.reddit.com/submit" onclick="window.location = 'http://www.reddit.com/submit?url=' + encodeURIComponent(window.location); return false"> <img src="http://www.reddit.com/static/spreddit7.gif" alt="submit to reddit" border="0" /> </a>
+					<a href="http://twitter.com/Kaljaa_com" class="twitter-follow-button"></a>-->
+				</div>
+			</div>
+			<div id="login">
+				<h1 style="color:red">Warning:</h1>
+				<p style="color:red">This site still under construction</p>
+				<p style="color:red">This version will most likely be outdated and <br>progress has been made since I last updated</p>
+				<p style="color:red">The purpose of this current site is for  <br>prospecting employers to see some rails dev</p>
+				<p style="color:red">Sign up is disabled but just shoot me a email at <br>dew.boms.llc@gmail.com and I will happily<br> give you a guest sign in</p>
+				<p style="color:red">Since this site is under construction there will <br>be many features and styling that are not <br>working/not complete, and much polish<br> that still needs to be applied</p>
+				<!--<form id="auth" action="/home/authenticate" method="post">
+					<div class="row">
+						<label><div>Email:</div>
+							<input style="width:128px;" name="email" size=<%=Constants::LOGIN_SIZE%> maxlength=<%=Constants::EMAIL_MAX_LENGTH%> />
+						</label>
+					</div>
+					<div class="row">
+						<label><div>Password:</div>
+							<input style="width:128px;" type="password" name="password" size=<%=Constants::LOGIN_SIZE%> maxlength=<%=Constants::PASSWORD_MAX_LENGTH%> />
+						</label>
+					</div>
+					<div class="row">
+						<label>Remember Me? <input type="checkbox" name="remember_me" /></label>
+					</div>
+					<input class="kj-button red" type="submit" value="Login"/>
+				</form>-->
+			</div>
+		</div>
+		<div id="text" style="margin-top: 0px;" ><span class="red-theme">Welcome to Kaljaa,</span> a social network designed specifically for the beer industry and culture. This is the home page is from our first beta/trial launch but the site is currently being rebuilt so styling and features are most likely going to not work.  <strike>Please feel welcome to sign up, review some beers, check out some news articles, blog, and invite your friends to join so you all can share the beers you love.<a href="/learn">Learn more.</a></strike></div>
+		<!--<div id="centrals">
+			<div class="centered">
+				<div>See what's going on:</div>
+				<a href="/blogs">Blogs</a>
+				<a href="/news">News</a>
+				<a href="/beers">Beers</a>
+			</div>
+		</div>-->
+	</div>
+</div>
+<div id="secondary" class="content">
+	<div class="clearfix">
+		<div class="header" style="color: #272727;">Our five profile types:</div>
+		<div id="profile-types" style="color: #272727;">
+			<div class="profile-type">
+				<div class="profile-header">Brewery</div>
+				<div class="desc" style="color: #272727;">This includes all licensed Breweries, Micro-Breweries, and Craft Brewers. If you're brewing beer and have a license then this is the profile for you.</div>
+				<div class="center-button" id="button-kaljaa-dark">
+<%= link_to "Create Profile", signup_path(type: "brewery"), class: "button-kaljaa-dark"  %></div>
+			</div>
+			<div class="separator"></div>
+			<div class="profile-type">
+				<div class="profile-header">Social</div>
+				<div class="desc" style="color: #272727;">If you just plain enjoy beer then this profile type is for you.</div>
+				<div class="center-button"><%= link_to "Create Profile", signup_path(type: "social"), class: "button-kaljaa-dark"  %></div>
+			</div>
+			<div class="separator"></div>
+			<div class="profile-type">
+				<div class="profile-header">Media</div>
+				<div class="desc" style="color: #272727;">If you're a critic or run any form of media that reports on the brewing industry then this is your profile type.</div>
+				<div class="center-button"><%= link_to "Create Profile", signup_path(type: "media"), class: "button-kaljaa-dark"  %></div>
+			</div>
+			<div class="separator"></div>
+			<div class="profile-type">
+				<div class="profile-header">Supplier/Distributor</div>
+				<div class="desc" style="color: #272727;">If you supply materials, provide services, or distribute brewed goods then sign up here!</div>
+				<div class="center-button"><%= link_to "Create Profile", signup_path(type: "industry"), class: "button-kaljaa-dark"  %></div>
+			</div>
+			<div class="separator"></div>
+			<div class="profile-type">
+				<div class="profile-header">Restaurant/Vendor</div>
+				<div class="desc" style="color: #272727;">If you represent a store, restaurant, or other beer selling establishment then this profile is for you.</div>
+				<div class="center-button"><%= link_to "Create Profile", signup_path(type: "vendor"), class: "button-kaljaa-dark"  %></div>
+			</div>
+		</div>
+	</div>
+</div>

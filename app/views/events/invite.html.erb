@@ -1,0 +1,53 @@
+<h1>Invite those Mofos</h1>
+
+<%= @event.title %>
+<%= @event.id %>
+<%= link_to ('Return to '+@event.title+' event page'), @event %> <br>
+<%= render 'invites/response' %>
+<h3>Attendance</h3>
+
+
+<div id="tabs">
+	<ul>
+		<% if (current_profile.id == @event.profile_id) || event_admin %>
+			<li><a href="#Invite">Invite Friends</a></li>
+		<% end %>
+		<li><a href="#Attending">Attending</a></li>
+		<li><a href="#Maybe">Maybe Attending</a></li>
+		<li><a href="#Decline">Unable to Attend</a></li>
+		<li><a href="#Noresponse">Not Responded</a></li>
+	</ul>
+	
+	
+	<% if (current_profile.id == @event.profile_id) || event_admin %>
+		<div id="Invite">
+			<h1>Invite Friends</h1>
+			<%= render 'invites/invite' %>
+		</div>
+	<% end %>
+	
+	<div id="Attending">
+		<h1>Attending</h1>
+		<p><%= @attending.count%> People Attending</p>
+		<%= render 'invites/attending' %>
+
+	</div>
+	<div id="Maybe">
+		<h2>Maybe Attending</h2>
+		<p><%= @maybe.count%> Maybe's</p>
+		<%= render 'invites/maybe' %>
+
+
+	</div>
+	<div id="Decline">
+		<h2>Unable to Attend</h2>
+		<p><%= @not_attending.count%> People Unable to Attend</p>
+		<%= render 'invites/not_attending' %>
+
+	</div>
+	<div id="Noresponse">
+		<h2>Has Not Responded</h2>
+		<p><%= @not_responded.count%> People Have Not Responded</p>
+		<%= render 'invites/no_response' %>
+	</div>	
+</div>

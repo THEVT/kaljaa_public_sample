@@ -1,0 +1,18 @@
+<%= link_to "Return to Blog Central", blogs_path %>
+
+<%= form_for(@blog) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	<div class="field">
+
+		<%= f.label :title, 'Blog Title:' %>	
+		<%= f.text_field :title, placeholder: "Blog title..." %>
+
+		<%= f.label :content, 'Content:' %>		
+		<%= f.text_area :content, :class => "tinymce", :rows => 40, :cols => 120 %>
+
+	</div>
+	<%= f.submit "Save changes"%>
+	<%= link_to "Cancel", @profile %>
+<% end %>
+
+<%= tinymce %>

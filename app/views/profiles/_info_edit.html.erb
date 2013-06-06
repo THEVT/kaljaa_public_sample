@@ -1,0 +1,26 @@
+<p>
+  <b>First Name:</b>
+  <%= best_in_place @profile, :s1 %>
+</p>
+<p>
+  <b>Last Name:</b>
+  <%= best_in_place @profile, :s2 %>
+</p>
+<p>
+  <b>City:</b>
+  <%= best_in_place @profile, :s3 %>
+</p>
+<p>
+  <b>State:</b>
+  <%= best_in_place @profile, :s4 %>
+</p>
+<p>
+  <b>Email:</b>
+  <%= best_in_place @profile, :s5 %>
+</p>
+<p>
+  <b>Gender:</b>
+  <%= best_in_place @profile, :s6 %>
+</p>
+
+<%= link_to 'Edit Profile', edit_profile_path(@profile) %>

@@ -1,0 +1,92 @@
+<p>Yo Yo<p>
+
+<%= @profile.s1 %>
+<%= @profile.s2 %>
+<%= @account.email %>
+
+<%= @profile.favbrewery.b2 %>
+<ul>
+<li><%= friendship_status(current_profile, @profile) %>
+  <% unless Friendship.exists?(current_profile, @profile) %>
+    <br />
+    <%= link_to "Request friendship with #{@profile.s1}", friendships_path(:friend_id => @profile), :method => :post, confirm: "Send friend request to #{@profile.s1}?" %>
+     <% end %>
+ </li>
+</ul>
+
+<%= link_to "Photos", profile_albums_path(@profile) %>
+
+<div id="tabs">
+	<ul>
+		<li><a href="#Info">Info</a></li>
+		<li><a href="#About_Info">About</a></li>
+		<li><a href="#Services">Services</a></li>
+		<li><a href="#Beer">Beers</a></li>
+		<li><a href="#Beers">Beer</a></li>
+		<li><a href="#Reviews">Reviews</a></li>
+		<li><a href="#Blogs">Blogs</a></li>
+		<li><a href="#News">News</a></li>
+		<li><a href="#Events">Events</a></li>
+		<li><a href="#Misc">Misc</a></li>
+	</ul>
+	<div id="Info">
+		<%= render 'info' %>
+
+		<%= render 'activities/activity' %>
+
+		<%= render 'interests/interest' %>
+	</div>
+	<div id="About_Info">
+		
+		<%= render 'abouts/about' %>
+
+		<%= render 'locations/location' %>
+	</div>
+	<div id="Services">
+		<%= render 'services/service' %>
+	</div>
+	<div id="Beer">
+		<%= render 'favbreweries/favbrewery' %>
+
+		<%= render 'favbeers/favbeer' %>
+
+		<%= render 'honorablebeers/honorablebeer' %>
+	</div>
+	<div id="Beers">
+		<%= render 'beers/beer_form' %>
+		
+		<%= render 'beers/show' %>
+	</div>
+	<div id="Reviews">
+		<p>Hello </p>
+
+		<%= link_to 'Add Beer Review',  new_reviewbeer_path %>
+
+		<%= render 'reviewbeers/reviewbeer_quick_form' %>
+		
+		<%= render 'reviewbeers/reviews' %>
+	</div>
+	<div id="Blogs">
+		<%= link_to 'Start New Blog',  new_blog_path %>
+
+		<%= render 'blogs/blogs' %>
+	</div>
+	<div id="News">
+		<%= link_to 'Start News Artcile',  new_article_path %>
+
+		<%= render 'articles/articles' %>
+	</div>
+	<div id="Events">
+		<%= link_to 'Create Event',  new_event_path %>
+
+		<%= render 'events/events' %>
+
+		<%= render 'events/calendar' %>
+	</div>
+	<div id="Misc">
+		<%= render 'miscs/misc' %>	
+	</div>
+</div>
+
+
+

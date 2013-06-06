@@ -1,0 +1,13 @@
+<% if @invited.exists?(:profile_id => current_profile.id) %>
+	<%= form_for(@attendee) do |f| %>
+		<%= f.hidden_field :event_id, :value => @event.id %>
+		<%= f.label :status, "Attending", :value => "attending"  %>
+		<%= f.radio_button :status, "attending" %>
+		<%= f.label :status, "Not Attending", :value => "not attending" %>
+		<%= f.radio_button :status, 'not attending' %>
+		<%= f.label :status, "Maybe", :value => "maybe"  %>
+		<%= f.radio_button :status, "maybe" %>
+		
+		<%= f.submit "Respond"%>
+	<% end %>
+<% end %>

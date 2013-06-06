@@ -1,0 +1,28 @@
+
+<aside class="span4">
+	<section>
+		<h1><%= @account.email %></h1>
+		<span><%= link_to "view my profile", @account %></span>
+		<span><b>Microposts:</b> <%= @account.microposts.count %></span>
+	</section>
+	<section>
+		<%= render 'shared/stats' %>
+		<% if @accounts.any? %>
+			<div class="user_avatars">
+			<% @accounts.each do |account| %>
+				<%= link_to "view my profile", @account %>
+			<% end %>
+			</div>
+		<% end %>
+	</section>
+	</aside>
+	<div class="span8">
+	<h3><%= @title %></h3>
+	<% if @accounts.any? %>
+		<ul class="users">
+			<%= render @accounts %>
+		</ul>
+		<%= will_paginate %>
+	<% end %>
+</div>
+

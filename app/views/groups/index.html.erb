@@ -1,0 +1,19 @@
+<%= link_to "Start New Group", new_group_path %>
+
+<h1>Groups</h1>
+
+<%= will_paginate %>
+
+<ul class="list_3_12">
+<% @groups.each do |group| %>
+	<li>
+	<%= image_tag group.photo.url(:thumb) %>
+	<%= link_to group.title, group %> <br>
+	<%= group.profile.s1 %>
+	Posted <%= time_ago_in_words(group.created_at) %> ago.
+
+	</li>
+<% end %>
+</ul>
+<%= will_paginate %>
+

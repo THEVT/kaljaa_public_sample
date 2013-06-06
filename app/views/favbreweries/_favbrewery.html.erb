@@ -1,0 +1,55 @@
+<% if current_user.admin? || current_user?(@account) %>
+<p> Hello there </p>
+	<%if !Favbrewery.exists?(profile_id: @profile.id) %>
+		<%= form_for(@favbrewery) do |f| %>
+		  <%= render 'shared/error_messages', object: f.object %>
+		  <div class="field">
+			<%= f.text_field :b1, placeholder: "Add your favorite breweries..." %>
+			<%= f.text_field :b2, placeholder: "Add your favorite breweries..." %>
+			<%= f.text_field :b3, placeholder: "Add your favorite breweries..." %>
+			<%= f.text_field :b4, placeholder: "Add your favorite breweries..." %>
+			<%= f.text_field :b5, placeholder: "Add your favorite breweries..." %>
+			<%= f.text_field :b6, placeholder: "Add your favorite breweries..." %>
+			<%= f.text_field :b7, placeholder: "Add your favorite breweries..." %>
+			<%= f.text_field :b8, placeholder: "Add your favorite breweries..." %>
+			<%= f.text_field :b9, placeholder: "Add your favorite breweries..." %>
+			<%= f.text_field :b10, placeholder: "Add your favorite breweries..." %>
+		  </div>
+		  <%= f.submit "Post"%>
+		<% end %>
+	<% else %>
+		<p>Favorite Breweries:</b>		
+		<ol>
+			<li><%= best_in_place @profile.favbrewery, :b1 %></li>
+			<li><%= best_in_place @profile.favbrewery, :b2 %></li>
+			<li><%= best_in_place @profile.favbrewery, :b3 %></li>
+			<li><%= best_in_place @profile.favbrewery, :b4 %></li>
+			<li><%= best_in_place @profile.favbrewery, :b5 %></li>
+			<li><%= best_in_place @profile.favbrewery, :b6 %></li>
+			<li><%= best_in_place @profile.favbrewery, :b7 %></li>
+			<li><%= best_in_place @profile.favbrewery, :b8 %></li>
+			<li><%= best_in_place @profile.favbrewery, :b9 %></li>
+			<li><%= best_in_place @profile.favbrewery, :b10 %></li>
+		</ol>
+
+	<%= link_to 'Edit Favorite Breweries',  edit_favbrewery_path(@favbrewery_present) %>
+	<% end %>
+
+<% else %>
+
+	<p>Favorite Breweries:</b>		
+		<ol>
+			<li><%= @profile.favbrewery.b1 %></li>
+			<li><%= @profile.favbrewery.b2 %></li>
+			<li><%= @profile.favbrewery.b3 %></li>
+			<li><%= @profile.favbrewery.b4 %></li>
+			<li><%= @profile.favbrewery.b5 %></li>
+			<li><%= @profile.favbrewery.b6 %></li>
+			<li><%= @profile.favbrewery.b7 %></li>
+			<li><%= @profile.favbrewery.b8 %></li>
+			<li><%= @profile.favbrewery.b9 %></li>
+			<li><%= @profile.favbrewery.b10 %></li>
+		</ol>
+
+
+<% end %>

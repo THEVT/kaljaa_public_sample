@@ -1,0 +1,147 @@
+/************************************************************************************************************
+ * _banner
+ ************************************************************************************************************/
+#prof-banner {
+	padding: 20px 0;
+}
+/**
+ * Profile picture
+ */
+#user-pic img {
+	width: 144x;
+	height: 172px;
+}
+#user-pic {
+	float: left;
+	width: 144x;
+	height: 172px;
+	margin-left: 5px;
+}
+/**
+ * Alerts list
+ */
+#alerts {
+	float: left;
+	margin-left: 20px;
+	font-size: 15px;
+	width: 150px;
+}
+#alerts .border div {
+	background: #bbb;
+	height: 2px;
+	padding: 0;
+	margin: 7px 0;
+}
+#alerts .val {
+	color: #888;
+	font-weight: bold;
+}
+/**
+ * Status area
+ */
+#status {
+	float: left;
+	margin: 2px 0 0 18px;
+	font-size: 18px;
+	width: 445px;
+}
+#status-text.hovering {
+	-moz-box-shadow: 0 0 3px #660000; -webkit-box-shadow: 0 0 3px #660000; box-shadow: 0 0 3px #660000; border: 1px solid #996255;
+}
+#status input {
+	width: 436px;
+	margin: 0 1px;
+	padding: 3px;
+	background: none;
+	border: 1px solid #666;
+	font-size: 18px;
+}
+/**
+ * Search widget container
+ */
+#kj-search-bar {
+	float: right;
+}
+/************************************************************************************************************
+ * _structure
+ ************************************************************************************************************/
+.portal-section {
+	margin-bottom: 15px;
+	width: 260px;
+	padding: 0 10px;
+	float: left;
+}
+.portal-section .body {
+	padding: 5px;
+	border: 1px solid #660000;
+	width: 100%;
+	min-height: 80px;
+	margin-top: 5px;
+}
+.portal-side-section {
+	margin-top: 25px;
+	width: 200px;
+}
+
+.title {
+	font-size: 16px;
+}
+.author {
+	float: right;
+	margin-right: 8px;
+}
+.portal-side-section .items {
+	border: 1px solid #ccc;
+	margin-top: 2px;
+	padding: 0 4px;
+}
+.portal-side-section .item {
+	padding: 6px 4px;
+}
+.portal-side-section .separator {
+	background: #ccc;
+	height: 1px;
+}
+
+#stream {
+	width: 100%;
+	margin: 10px 0 20px;
+}
+#stream .event {
+	padding: 15px 0;
+}
+#stream .event-pic img {
+	margin: 0 5px;
+	width: 60px;
+	height: 60px;
+}
+#stream .event-pic {
+	float: left;
+}
+#stream .event-body {
+	float: left;
+	width: 480px;
+	margin: 0 5px;
+}
+#stream .event-name {
+	font-size: 15px;
+}
+#botw img {
+	width: 190px;
+	height: 220px;
+}
+#wots {
+	clear: left;
+	width: 540px;
+}
+#kj-ads {
+	margin-top: 25px;
+}
+.greyfill {
+	position: static;
+}
+.pages .page-opt {
+	color: #660000;
+	text-decoration: underline;
+	cursor: pointer;
+}

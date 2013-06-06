@@ -1,0 +1,58 @@
+<%= link_to "Return to Groups Home", groups_path %>
+
+<%= image_tag @group.photo.url(:thumb) %>
+<%= @group.title %>
+<%= @group.description %>
+<% if current_profile?(@group.profile) || group_admin %>
+		<%= link_to 'Edit Group',  edit_group_path(@group.id) %>
+		<% if current_profile?(@group.profile) %>
+			<%= link_to "delete", @group, method: :delete,
+						             data: { confirm: "You sure?" },
+						             title: @group.description %>
+		<% end %>
+	<% end %>
+
+<%= link_to "Invite Friends", members_group_path %>
+
+<%= render 'members/response' %>
+
+<%= link_to 'Start Blog from this Group',  new_group_blog_path(@group) %>
+<h3>Blogs Started (<%= @group.blog.count %>)</h3>
+<%= render 'blogs/blogs' %>
+
+<%= link_to 'Start News Article from this Group',  new_group_article_path(@group) %>
+<h3>News Artciles Started (<%= @group.article.count %>)</h3>
+<%= render 'articles/articles' %>
+
+<div id="tabs">
+	<ul>
+		<li><a href="#Members">Members</a></li>
+		<li><a href="#Admin">Admins</a></li>
+		<li><a href="#Decline">Declined</a></li>
+		<li><a href="#Noresponse">Not Responded</a></li>
+	</ul>
+	
+	<div id="Members">
+		<h1>Members</h1>
+		<p><%= @member_total.count%> Members</p>
+		<%= render 'members/members' %>
+	</div>
+	<div id="Admin">
+		<h2>Admins</h2>
+		<p><%= @admin_total.count%> Admin's</p>
+		<%= render 'members/admins' %>
+
+
+	</div>
+	<div id="Decline">
+		<h2>Unable to Attend</h2>
+		<p><%= @declined_total.count%> People Unable to Attend</p>
+		<%= render 'members/declined' %>
+
+	</div>
+	<div id="Noresponse">
+		<h2>Has Not Responded</h2>
+		<p><%= @not_responded_total.count%> People Have Not Responded</p>
+		<%= render 'members/no_response' %>
+	</div>	
+</div>

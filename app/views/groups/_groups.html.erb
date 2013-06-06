@@ -1,0 +1,10 @@
+
+<h1><%=@profile.s1 %> Groups</h1>
+
+<% if @profile.group.any? %>
+	<h3>Events Started (<%= @profile.group.count %>)</h3>
+	<ol class="beers">
+		<%= render @groups %>
+	</ol>
+	<%= will_paginate @groups %>
+<% end %>

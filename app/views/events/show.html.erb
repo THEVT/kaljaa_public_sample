@@ -1,0 +1,59 @@
+<%= link_to "Return to Event Central", events_path %>
+
+<%= image_tag @event.photo.url(:thumb) %>
+<%= @event.title %>
+<%= @event.description %>
+<% if current_profile?(@event.profile) || event_admin %>
+		<%= link_to 'Edit Event',  edit_event_path(@event.id) %>
+		<% if current_profile?(@event.profile) %>
+			<%= link_to "delete", @event, method: :delete,
+						             data: { confirm: "You sure?" },
+						             title: @event.description %>
+		<% end %>
+	<% end %>
+
+<%= link_to "Invite Friends", invite_event_path %>
+
+<%= render 'invites/response' %>
+
+<%= link_to 'Start Blog from this Event',  new_event_blog_path(@event) %>
+<h3>Blogs Started (<%= @event.blog.count %>)</h3>
+<%= render 'blogs/blogs' %>
+
+<%= link_to 'Start News Article from this Event',  new_event_article_path(@event) %>
+<h3>News Artciles Started (<%= @event.article.count %>)</h3>
+<%= render 'articles/articles' %>
+
+<div id="tabs">
+	<ul>
+		<li><a href="#Attending">Attending</a></li>
+		<li><a href="#Maybe">Maybe Attending</a></li>
+		<li><a href="#Decline">Unable to Attend</a></li>
+		<li><a href="#Noresponse">Not Responded</a></li>
+	</ul>
+	
+	<div id="Attending">
+		<h1>Attending</h1>
+		<p><%= @attending_total.count%> People Attending</p>
+		<%= render 'invites/attending' %>
+
+	</div>
+	<div id="Maybe">
+		<h2>Maybe Attending</h2>
+		<p><%= @maybe_total.count%> Maybe's</p>
+		<%= render 'invites/maybe' %>
+
+
+	</div>
+	<div id="Decline">
+		<h2>Unable to Attend</h2>
+		<p><%= @not_attending_total.count%> People Unable to Attend</p>
+		<%= render 'invites/not_attending' %>
+
+	</div>
+	<div id="Noresponse">
+		<h2>Has Not Responded</h2>
+		<p><%= @not_responded_total.count%> People Have Not Responded</p>
+		<%= render 'invites/no_response' %>
+	</div>	
+</div>

@@ -1,0 +1,64 @@
+<table>
+  <tr>
+    <th colspan="3" align="left">
+      <%= pluralize(@profile.friends.count, "Kaljaa friend") %>
+    </th>
+  </tr>
+  <% @profile.friends.each do |friend| %>
+  <tr>
+    <td width="50">
+      <%= link_to "thumbnail", profiles_path %>
+    </td>
+    <td><%= link_to friend.s1, friend %></td>
+    <td>
+		<% if current_profile?(@profile) %>
+			<%= link_to "Delete", { :controller => "friendships", :action => "delete",
+                      :id => friend.id },
+                    :confirm =>
+                    "Really delete friendship with #{friend.s1}?" %>
+		<% end %>
+    </td>
+  </tr>
+  <% end %>
+  <% unless @profile.requested_friends.empty? %>
+    <tr>
+      <th colspan="3" align="left">
+        <%= pluralize(@profile.requested_friends.count, "requested friend") %>
+      </th>
+    </tr>
+    <% @profile.requested_friends.each do |requester| %>
+    <tr>
+      <td><%= link_to "thumbnail", profiles_path %></td>
+      <td><%= link_to requester.s1, @profile %></td>
+      <td>
+          <%= link_to "Accept",
+                      :controller => "friendships", :action => "accept", :id => requester.id %> /
+          <%= link_to "Decline",
+                      { :controller => "friendships", :action => "decline",
+                       :id => requester.id },
+                      :confirm =>
+                      "Really decline friendship with #{requester.s1}?" %>
+      </td>
+    </tr>
+    <% end %>
+  <% end %>
+  <% unless @profile.pending_friends.empty? %>
+    <tr>
+      <th colspan="3" align="left">
+        <%= pluralize(@profile.pending_friends.count, "pending friend") %>
+      </th>
+    </tr>
+    <% @profile.pending_friends.each do |pending_friend| %>
+    <tr>
+      <td><%= link_to "thumbnail", profiles_path %></td>
+      <td><%= link_to pending_friend.s1, @profile %></td>
+      <td><%= link_to "Cancel request",
+                      { :controller => "friendships", :action => "cancel",
+                        :id => pending_friend.id },
+                      :confirm =>
+                      "Cancel friendship request?" %></td>
+    </tr>
+    <% end %>
+  <% end %>
+</table>
+

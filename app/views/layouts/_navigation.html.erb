@@ -1,0 +1,52 @@
+<% if signed_in? %>
+	<div id="banner">
+		<div class="content">
+			<a href="/"><img id="logo" alt="Kaljaa Logo" src="/images/_.gif" /></a>
+			<div id="cheers"></div>
+			<div class="clear"></div>
+			<div id="navigation">
+				<div class="left"><%= link_to "Home", current_user %></div>
+				<div class="left"><%= link_to "Profile", profile_path(current_profile) %></div>
+				<div class="left"><%= link_to "Profiles", profiles_path %></div>
+				<div class="left"><%= link_to "Friends", accounts_path %></div>
+				<div class="left"><%= link_to "Messages", m_home_path %></div>
+				<div class="left"><%= link_to "Blogs", blogs_path %></div>
+				<div class="left"><%= link_to "News", articles_path %></div>
+				<div class="left"><%= link_to "Beers", beercentrals_path %></div>
+				<div class="left"><%= link_to "Events", events_path %></div>
+				<div class="left"><%= link_to "Groups", groups_path %></div>
+				<div class="left"><a class="nav_link" href="/search/?query=">Search</a></div>
+				<div class="right"><%= link_to "Sign out", signout_path, method: "delete" %></div>
+				<div class="right"><%= link_to "Settings", edit_account_path(current_user) %></div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+<% else %>
+	<div id="banner-unauthed">
+		<div class="content">
+			<a href="/"><img id="logo" alt="Kaljaa Logo" src="/assets/logo.png"/></a>
+			<div id="navigation">
+				<!-- check original nav -->
+				<div class="left"><a class="nav_link" href="/blogs">Blogs</a></div>
+				<div class="left"><a class="nav_link" href="/news">News</a></div>
+				<div class="left"><a class="nav_link" href="/beers">Beers</a></div>
+				<div class="clear"></div>
+			</div>
+			<div style= "color:white; display:inline;">
+				<%= form_for(:session, url: sessions_path) do |f| %>
+
+					<%= f.label :email %>
+					<%= f.text_field :email %>
+
+					<%= f.label :password %>
+					<%= f.password_field :password %>
+
+					<%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+				<% end %>
+
+				<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+			</div>
+		</div>
+	</div>
+<% end %>

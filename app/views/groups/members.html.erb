@@ -1,0 +1,52 @@
+<h1>Invite those Mofos</h1>
+
+<%= @group.title %>
+<%= @group.id %>
+<%= link_to ('Return to '+@group.title+' group page'), @group %> <br>
+<%= render 'members/response' %>
+<h3>Members</h3>
+
+
+<div id="tabs">
+	<ul>
+		<% if (current_profile.id == @group.profile_id) || group_admin %>
+			<li><a href="#Invite">Invite Friends</a></li>
+		<% end %>
+		<li><a href="#Members">Members</a></li>
+		<li><a href="#Admin">Admins</a></li>
+		<li><a href="#Decline">Declined</a></li>
+		<li><a href="#Noresponse">Not Responded</a></li>
+	</ul>
+	
+	
+	<% if (current_profile.id == @group.profile_id) || group_admin %>
+		<div id="Invite">
+			<h1>Invite Friends</h1>
+			<%= render 'members/invite' %>
+		</div>
+	<% end %>
+	
+	<div id="Members">
+		<h1>Members</h1>
+		<p><%= @members.count%> Members</p>
+		<%= render 'members/members' %>
+	</div>
+	<div id="Admin">
+		<h2>Admins</h2>
+		<p><%= @admin.count%> Admin's</p>
+		<%= render 'members/admins' %>
+
+
+	</div>
+	<div id="Decline">
+		<h2>Unable to Attend</h2>
+		<p><%= @declined.count%> People Unable to Attend</p>
+		<%= render 'members/declined' %>
+
+	</div>
+	<div id="Noresponse">
+		<h2>Has Not Responded</h2>
+		<p><%= @not_responded.count%> People Have Not Responded</p>
+		<%= render 'members/no_response' %>
+	</div>	
+</div>

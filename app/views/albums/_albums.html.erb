@@ -1,0 +1,7 @@
+	<h3>Blogs Started (<%= @profile.album.count %>)</h3>
+<% if @profile.album.any? %>
+	<ol class="beers">
+		<%= render @albums %>
+	</ol>
+	<%= will_paginate @albums %>
+<% end %>

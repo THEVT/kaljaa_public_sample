@@ -1,0 +1,16 @@
+<ul>
+	<% @declined.each do |declined| %>
+		<li>
+			<%= link_to (declined.profile.s1+" "+declined.profile.s2), declined.profile %> <br>
+			<% if (current_profile.id == @group.profile_id) || group_admin %>
+				<% if declined.admin == 0 %>
+						<%= link_to "Make Admin", admin_member_path(declined)%>
+				<% else %>
+						<p>Admin  						
+						<%= link_to "Undo Admin Status", admin_member_path(declined)%></p>
+				<% end %>
+				<%= link_to "Delete", declined, method: :delete, data: { confirm: "Un-member this Lame-o?" } %>
+			<% end %>
+		</li>
+	<% end %>
+</ul>
